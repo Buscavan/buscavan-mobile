@@ -40,3 +40,15 @@
 * {
   font-family: 'Inter';
 }
+
+ion-searchbar.rightIcon {
+  ion-icon {
+    right: 16px !important;
+    left: auto !important;
+  }
+
+  input {
+    padding-left: 1rem !important;
+    padding-right: auto !important;
+  }
+}
