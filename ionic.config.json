@@ -1,0 +1,7 @@
+{
+  "name": "buscavan-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
