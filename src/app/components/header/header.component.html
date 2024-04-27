@@ -1,0 +1,14 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+
+      <div>
+        <span #content><ng-content></ng-content></span>
+        <div *ngIf="!content.childNodes.length">
+          <span class="defaultTitle">BUSCAVAN</span>
+        </div>
+      </div>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
