@@ -1,0 +1,22 @@
+.landing {
+  margin: auto;
+  margin-top: 5vh;
+  width: 90%;
+  text-align: center;
+
+  .landingTitle {
+    font-weight: 900;
+    color: #3e3e3e;
+    font-size: 20px;
+  }
+
+  .landingDescription {
+    color: #7d7d7d;
+    font-size: 16px;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+}
