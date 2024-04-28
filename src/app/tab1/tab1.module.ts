@@ -7,6 +7,7 @@ import { Tab1Page } from './tab1.page';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { HeaderComponent } from '../components/header/header.component';
 import { SearchTripsComponent } from '../components/search-trips/search-trips.component';
+import { TripsCarrouselComponent } from '../components/trips-carrousel/trips-carrousel.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { SearchTripsComponent } from '../components/search-trips/search-trips.co
     FormsModule,
     Tab1PageRoutingModule,
     HeaderComponent,
-    SearchTripsComponent
+    SearchTripsComponent,
+    TripsCarrouselComponent
   ],
   declarations: [Tab1Page]
 })
