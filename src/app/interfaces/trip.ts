@@ -3,6 +3,7 @@ interface Trip {
   price: number,
   location: string,
   image: string,
+  tripImages: string[],
   capacity: number,
   driver: string,
   date: string,
