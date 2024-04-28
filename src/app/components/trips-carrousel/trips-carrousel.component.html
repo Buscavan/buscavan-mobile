@@ -4,7 +4,7 @@
 
   <swiper-container [slidesPerView]="2.1" loop>
     <swiper-slide *ngFor="let trip of trips">
-      <div class="trip">
+      <div class="trip" (click)="openModal(trip)">
         <img [src]="trip.image" [alt]="trip.name">
         <div class="line"></div>
         <div>

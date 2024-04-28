@@ -1,7 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, Component, Input } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { Trip } from 'src/app/interfaces/trip';
 import { register } from 'swiper/element/bundle';
+import { ModalController } from '@ionic/angular';
+import { TripModalComponent } from '../trip-modal/trip-modal.component';
 
 register();
 
@@ -18,7 +21,7 @@ register();
 })
 export class TripsCarrouselComponent {
 
-  public trips = [
+  public trips: Trip[] = [
     {
       name: 'UNISAGRADO',
       price: 1298.99,
@@ -81,6 +84,17 @@ export class TripsCarrouselComponent {
   @Input()
   public state: String = 'SP';
 
-  constructor() { }
+  constructor(private modalController: ModalController) { }
+
+  async openModal(trip: Trip) {
+    const modal = await this.modalController.create({
+      component: TripModalComponent,
+      componentProps: {
+        data: trip,
+      }
+    });
+    modal.present();
+
+  }
 
 }
