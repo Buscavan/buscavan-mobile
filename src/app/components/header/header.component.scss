@@ -1,11 +1,13 @@
-.defaultTitle {
-  font-weight: 900;
-  font-style: italic;
-  font-size: 24px;
-}
-
 ion-toolbar {
   text-align: center;
-  color: #FFFFFF;
-  --background: #3e3e3e;
+  color: #000000;
+  --background: #ffffff;
+  --min-height: 64px;
+
+  ion-title {
+    font-weight: 900;
+    font-style: italic;
+    font-size: 20px;
+    text-align: start;
+  }
 }
