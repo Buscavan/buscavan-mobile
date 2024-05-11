@@ -13,7 +13,7 @@ export class Tab1Page implements OnInit {
     const topPosition = event.detail.scrollTop;
     const tabBar: any = document.querySelector('ion-tab-bar');
 
-    tabBar.style.opacity = topPosition > 20 ? 1 : 0;
+    tabBar.style.opacity = topPosition > 30 ? 1 : 0;
   }
 
   ngOnInit(): void {

@@ -28,7 +28,7 @@
     }
   }
 
-  ion-card {
+  .searchCard {
     margin-top: 15%;
 
     ion-card-header {
@@ -85,5 +85,62 @@
       }
     }
   }
+}
 
+.vehiclesCard {
+  margin: 10% 7% auto 7%;
+  ion-card-header {
+    margin-bottom: 5%;
+
+    ion-card-title {
+      color: #09090B;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    ion-card-subtitle {
+      color: #71717A;
+      font-size: 12px;
+    }
+  }
+
+  ion-card-content {
+    ion-grid {
+      ion-row {
+        ion-col {
+          ion-img {
+            background-color: #D4D4D8;
+            border-radius: 8px;
+            filter: drop-shadow(0 2px 2px #00000034);
+          }
+        }
+      }
+    }
+  }
+}
+
+.advertisement {
+  background-color: #27272A;
+  border-top: 1px solid #A1A1AA;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 25px;
+
+  p {
+    font-weight: 600;
+    font-size: 12px;
+    color: #ffffff;
+  }
+
+  ion-button {
+    --background: #FAFAFA;
+    --color: #18181B;
+    text-transform: none;
+    font-size: 14px;
+    width: 180px;
+    height: 40px;
+  }
 }
