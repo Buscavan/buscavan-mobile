@@ -52,3 +52,8 @@ ion-searchbar.rightIcon {
     padding-right: auto !important;
   }
 }
+
+input[type='date'] {
+  color: #71717A !important;
+  opacity: var(--placeholder-opacity);
+}
