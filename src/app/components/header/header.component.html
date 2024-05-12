@@ -1,11 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>BUSCAVAN</ion-title>
+<ion-header [translucent]="true" [ngClass]="{'transparentHeader': transparent===true}">
+  <ion-toolbar [ngClass]="{'transparentToolbar': transparent===true}">
+    <ion-title [ngStyle]="{'color': color}">BUSCAVAN</ion-title>
 
-    <ion-buttons slot="end">
+    <ion-buttons slot="end" *ngIf="hasIcon">
       <ion-button>
         <ion-icon name="menu-outline" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
+
 </ion-header>

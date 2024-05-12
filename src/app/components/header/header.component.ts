@@ -15,7 +15,13 @@ import { IonicModule } from '@ionic/angular';
 export class HeaderComponent {
 
   @Input()
-  color: String = '';
+  color: String = '#000000';
+
+  @Input()
+  hasIcon: boolean = true;
+
+  @Input()
+  transparent: boolean = false;
 
   constructor() { }
 

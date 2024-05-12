@@ -1,6 +1,5 @@
 ion-toolbar {
   text-align: center;
-  color: #000000;
   --background: #ffffff;
   --min-height: 64px;
 
@@ -10,4 +9,12 @@ ion-toolbar {
     font-size: 20px;
     text-align: start;
   }
+}
+
+.transparentToolbar {
+  --background: #ffffff00;
+}
+
+.transparentHeader {
+  box-shadow: none;
 }
