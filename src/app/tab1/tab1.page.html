@@ -1,36 +1,8 @@
 <app-header></app-header>
 
-<ion-content [fullscreen]="true" scrollEvents (ionScroll)="scrolled($event)">
-
-  <div class="landingPage">
-    <div class="info">
-      <h1 class="title">Encontre uma van para sua próxima aventura.</h1>
-      <span class="description">
-        Encontre vans confortáveis e prontas para a estrada. Perfeito para viagens em família ou uma escapadela com amigos
-      </span>
-    </div>
+<ion-content [fullscreen]="true">
 
 
-    <ion-card class="searchCard">
-      <ion-card-header>
-        <ion-card-title>Busque por Aqui</ion-card-title>
-        <ion-card-subtitle>Preencha os campos abaixo</ion-card-subtitle>
-      </ion-card-header>
-
-      <ion-card-content>
-        <div class="locationFilter">
-            <ion-input label="Origem" labelPlacement="stacked" placeholder="Lençóis Paulista, SP" fill="outline"></ion-input>
-            <ion-input label="Destino" labelPlacement="stacked" placeholder="Campos do Jordão, SP" fill="outline"></ion-input>
-        </div>
-        <div class="dateFilter">
-            <ion-input label="De" labelPlacement="stacked" placeholder="dd/mm/yyyy" fill="outline" type="date"></ion-input>
-            <ion-input label="Até" labelPlacement="stacked" placeholder="dd/mm/yyyy" fill="outline" type="date"></ion-input>
-        </div>
-
-        <ion-button expand="block">Confirmar Busca</ion-button>
-      </ion-card-content>
-    </ion-card>
-  </div>
 
   <!-- <div class="ion-margin-top">
     <app-search-trips></app-search-trips>

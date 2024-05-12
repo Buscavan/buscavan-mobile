@@ -8,10 +8,4 @@ import { Component } from '@angular/core';
 export class Tab3Page {
 
   constructor() {}
-
-  ionViewWillEnter(): void {
-    const tabBar: any = document.querySelector('ion-tab-bar');
-    tabBar.style.opacity = 1;
-    tabBar.style.display = 'flex';
-  }
 }
