@@ -1,13 +1,51 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>register</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header [hasIcon]="false" [backButton]="true"></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="background">
+    <div class="item">
+      <h1>Faça seu Registro aqui</h1>
+      <p>Preencha os dados abaixo para cadastrar-se no sistema</p>
+      <ion-input
+        label="Nome"
+        labelPlacement="stacked"
+        placeholder="Digite seu nome"
+        fill="outline"
+      ></ion-input>
+      <ion-input
+        label="E-mail"
+        labelPlacement="stacked"
+        placeholder="nome@exemplo.com"
+        fill="outline"
+      ></ion-input>
+      <div>
+        <ion-input
+          label="CPF"
+          labelPlacement="stacked"
+          placeholder="000.000.000-00"
+          fill="outline"
+        ></ion-input>
+        <ion-input
+          label="Senha"
+          labelPlacement="stacked"
+          placeholder="Digite sua senha"
+          fill="outline"
+        ></ion-input>
+      </div>
+      <ion-button class="enter" (click)="navigateByUrl('tabs')"
+        >Cadastrar-se no Sistema</ion-button
+      >
+      <div class="or">
+        <span></span>
+        <p>OU</p>
+        <span></span>
+      </div>
+      <ion-button class="login" (click)="navigateByUrl('login')"
+        >Entre em nossa plataforma</ion-button
+      >
+      <p>
+        Ao continuar, você concorda com os Termos de Serviço e Políticas de
+        Privacidade
+      </p>
+    </div>
+  </div>
 </ion-content>
