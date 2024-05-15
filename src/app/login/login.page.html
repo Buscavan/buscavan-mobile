@@ -1,0 +1,26 @@
+<app-header [hasIcon]="false" [backButton]="true"></app-header>
+
+<ion-content [fullscreen]="true">
+  <div class="background">
+    <div class="item">
+      <h1>Faça Login no Buscavan</h1>
+      <p>Preencha os dados abaixo para entrar no sistema</p>
+      <ion-input
+        label="CPF"
+        labelPlacement="stacked"
+        placeholder="000.000.000-00"
+        fill="outline"
+      ></ion-input>
+      <ion-input
+        label="Senha"
+        labelPlacement="stacked"
+        placeholder="Digite sua senha"
+        fill="outline"
+      ></ion-input>
+      <ion-button class="enter">Entrar no sistema</ion-button>
+      <div class="or"><span></span><p>OU</p><span></span></div>
+      <ion-button class="register">Cadastre-se em nossa plataforma</ion-button>
+      <p>Ao continuar, você concorda com os Termos de Serviço e Políticas de Privacidade</p>
+    </div>
+  </div>
+</ion-content>

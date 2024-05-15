@@ -21,6 +21,9 @@ export class HeaderComponent {
   hasIcon: boolean = true;
 
   @Input()
+  backButton: boolean = false;
+
+  @Input()
   transparent: boolean = false;
 
   constructor() { }
