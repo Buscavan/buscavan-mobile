@@ -2,46 +2,126 @@
 
 <ion-content [fullscreen]="true">
   <div class="background">
-    <div class="item">
-      <h1>Faça seu Registro aqui</h1>
-      <p>Preencha os dados abaixo para cadastrar-se no sistema</p>
-      <ion-input
-        label="Nome"
-        labelPlacement="stacked"
-        placeholder="Digite seu nome"
-        fill="outline"
-      ></ion-input>
-      <ion-input
-        label="E-mail"
-        labelPlacement="stacked"
-        placeholder="nome@exemplo.com"
-        fill="outline"
-      ></ion-input>
-      <div>
+    <div class="item" [formGroup]="registerForm">
+      <form [formGroup]="registerForm" (submit)="register()">
+        <h1>Faça seu Registro aqui</h1>
+        <p>Preencha os dados abaixo para cadastrar-se no sistema</p>
         <ion-input
-          label="CPF"
+          label="Nome"
           labelPlacement="stacked"
-          placeholder="000.000.000-00"
+          placeholder="Digite seu nome"
           fill="outline"
-        ></ion-input>
+          name="name"
+          formControlName="name"
+          (change)="print(this.registerForm)"
+        >
+        </ion-input>
+        <div
+          class="errorsLabels"
+          *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.dirty || registerForm.controls.name.touched)"
+        >
+          <ng-container
+            *ngIf="registerForm.controls.name.errors?.['required']; else second"
+          >
+            <div class="errorLabel">Nome é obrigatório.</div>
+          </ng-container>
+          <ng-template #second>
+            <ng-container
+              *ngIf="registerForm.controls.name.errors?.['minlength']; else third"
+            >
+              <div class="errorLabel">Tamanho minímo de 3 caracteres.</div>
+            </ng-container>
+          </ng-template>
+          <ng-template #third>
+            <div class="errorLabel">Nome inválido.</div>
+          </ng-template>
+        </div>
+
         <ion-input
-          label="Senha"
+          label="E-mail"
           labelPlacement="stacked"
-          placeholder="Digite sua senha"
+          placeholder="nome@exemplo.com"
           fill="outline"
+          name="email"
+          formControlName="email"
         ></ion-input>
-      </div>
-      <ion-button class="enter" (click)="navigateByUrl('tabs')"
-        >Cadastrar-se no Sistema</ion-button
-      >
+        <div
+          class="errorsLabels"
+          *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)"
+        >
+          <ng-container
+            *ngIf="registerForm.controls.email.errors?.['required']; else second"
+          >
+            <div class="errorLabel">E-mail é obrigatório.</div>
+          </ng-container>
+          <ng-template #second>
+            <div class="errorLabel">E-mail inválido.</div>
+          </ng-template>
+        </div>
+
+        <div class="buttons">
+          <div class="button">
+            <ion-input
+              label="CPF"
+              labelPlacement="stacked"
+              placeholder="000.000.000-00"
+              fill="outline"
+              name="cpf"
+              formControlName="cpf"
+            ></ion-input>
+            <div
+              class="errorsLabels"
+              *ngIf="registerForm.controls.cpf.invalid && (registerForm.controls.cpf.dirty || registerForm.controls.cpf.touched)"
+            >
+              <ng-container
+                *ngIf="registerForm.controls.cpf.errors?.['required']; else second"
+              >
+                <div class="errorLabel">CPF é obrigatório.</div>
+              </ng-container>
+              <ng-template #second>
+                <div class="errorLabel">CPF inválido.</div>
+              </ng-template>
+            </div>
+          </div>
+
+          <div class="button">
+            <ion-input
+              label="Senha"
+              labelPlacement="stacked"
+              placeholder="Digite sua senha"
+              fill="outline"
+              type="password"
+              name="password"
+              formControlName="password"
+            ></ion-input>
+            <div
+              class="errorsLabels"
+              *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)"
+            >
+              <ng-container
+                *ngIf="registerForm.controls.password.errors?.['required']; else second"
+              >
+                <div class="errorLabel">Senha é obrigatória.</div>
+              </ng-container>
+              <ng-template #second>
+                <div class="errorLabel">Tamanho minímo de 3 caracteres.</div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
+        <ion-button class="enter" type="submit"
+          >Cadastrar-se no Sistema</ion-button
+        >
+      </form>
+
       <div class="or">
         <span></span>
         <p>OU</p>
         <span></span>
       </div>
-      <ion-button class="login" (click)="navigateByUrl('login')"
-        >Entre em nossa plataforma</ion-button
-      >
+      <ion-button class="login" (click)="navigateByUrl('login')">
+        Entre em nossa plataforma
+      </ion-button>
       <p>
         Ao continuar, você concorda com os Termos de Serviço e Políticas de
         Privacidade

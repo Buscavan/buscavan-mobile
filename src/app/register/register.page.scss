@@ -21,7 +21,7 @@
       --highlight-color-focused: #71717a;
       --color: #000000;
       --border-width: 1px;
-      margin-bottom: 5%;
+      margin-top: 5%;
       text-align: start;
     }
 
@@ -47,11 +47,11 @@
       }
     }
 
-    div {
+    .buttons {
       display: flex;
       justify-content: space-between;
 
-      ion-input {
+      .button {
         width: 47.5%;
       }
     }
@@ -82,4 +82,14 @@ h1 {
 p {
   color: #52525b;
   font-size: 14px;
+}
+
+.errorLabel {
+  color: red;
+  font-size: .8rem;
+  text-align: start;
+}
+
+.errorsLabels {
+  margin-left: 1rem;
 }
