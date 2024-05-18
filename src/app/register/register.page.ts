@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RequestsService } from '../services/requests.service';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, Validator, ValidatorFn, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -27,11 +27,11 @@ export class RegisterPage implements OnInit {
 
     console.log(this.registerForm)
 
-    let response;
     const request = await this.requestsService.post('users/create', value);
-    request.subscribe((data: any) => response = data);
-    //console.log(response);
-    this.navigateByUrl('tabs');
+    request.subscribe((response: any) => {
+      console.log('Response: ', response)
+      if (response.status === 201 && response.body) this.navigateByUrl('tabs');
+    });
   }
 
   ngOnInit(): void {
