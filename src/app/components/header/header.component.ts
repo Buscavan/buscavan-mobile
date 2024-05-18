@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -26,6 +27,10 @@ export class HeaderComponent {
   @Input()
   transparent: boolean = false;
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController) { }
+
+  public openMenu() {
+    this.menuCtrl.open('sidebar-menu');
+  }
 
 }
