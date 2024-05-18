@@ -8,6 +8,7 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 import { HeaderComponent } from '../components/header/header.component';
+import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { HeaderComponent } from '../components/header/header.component';
     RegisterPageRoutingModule,
     HeaderComponent,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    IonicInputMaskModule
   ],
   declarations: [RegisterPage]
 })

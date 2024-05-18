@@ -44,7 +44,9 @@ export class RegisterPage implements OnInit {
     console.log(this.registerForm)
   }
 
-  public print(s: any) {
-    console.log(s)
-  }
+  numericOnly(event: any): boolean {
+    let pattern = /^([0-9])$/;
+    let result = pattern.test(event.key);
+    return result;
+ }
 }

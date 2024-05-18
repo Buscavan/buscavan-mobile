@@ -13,7 +13,6 @@
           fill="outline"
           name="name"
           formControlName="name"
-          (change)="print(this.registerForm)"
         >
         </ion-input>
         <div
@@ -68,6 +67,9 @@
               fill="outline"
               name="cpf"
               formControlName="cpf"
+              maxlength="14"
+              (keypress)="numericOnly($event)"
+              mask="***.***.***-**"
             ></ion-input>
             <div
               class="errorsLabels"
