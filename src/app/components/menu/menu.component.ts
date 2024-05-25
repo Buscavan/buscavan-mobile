@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { IonicModule, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-menu',
@@ -18,6 +19,10 @@ export class MenuComponent {
   name: string = 'Buscavan';
 
 
-  constructor() { }
+  constructor(private router: Router, private menuCtrl: MenuController) { }
 
+  public navigateByUrl(url: string) {
+    this.menuCtrl.close('sidebar-menu');
+    this.router.navigateByUrl(url);
+  }
 }
