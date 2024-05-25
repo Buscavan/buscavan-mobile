@@ -4,10 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { RegisterPageRoutingModule } from './register-routing.module';
 
-import { LoginPage } from './login.page';
-import { HeaderComponent } from '../components/header/header.component';
+import { RegisterPage } from './register.page';
+import { HeaderComponent } from '../../../components/header/header.component';
 import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 
 @NgModule({
@@ -15,12 +15,12 @@ import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
+    RegisterPageRoutingModule,
     HeaderComponent,
     ReactiveFormsModule,
     FormsModule,
     IonicInputMaskModule
   ],
-  declarations: [LoginPage]
+  declarations: [RegisterPage]
 })
-export class LoginPageModule {}
+export class RegisterPageModule {}
