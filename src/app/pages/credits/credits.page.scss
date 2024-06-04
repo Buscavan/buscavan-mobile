@@ -1,0 +1,30 @@
+h1 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #09090B;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #09090B;
+}
+
+p {
+  font-size: 16px;
+  color: #09090B;
+}
+
+span {
+  font-size: 12px;
+  color: #3F3F46;
+}
+
+.image-div {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  align-self: center;
+}

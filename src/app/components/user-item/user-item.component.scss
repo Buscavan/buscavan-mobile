@@ -1,0 +1,18 @@
+span {
+  color: #3F3F46;
+  font-size: 14px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+
+  .tags {
+    margin-top: 5px;
+    ion-badge {
+      width: fit-content;
+      margin-left: 2.5px;
+      margin-right: 2.5px;
+    }
+  }
+}

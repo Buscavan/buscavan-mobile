@@ -1,0 +1,35 @@
+<app-header [backButton]="true" [hasMenu]="false" defaultHref="/tabs"></app-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <h1>Créditos</h1>
+  <h3>Projeto de extensão</h3>
+
+  <p>Coordenador</p>
+  <app-user-item [icon]="true" text="Prof. Dr. Elvio Gilberto da Silva" />
+
+  <p>Professor Colaborador</p>
+  <app-user-item [icon]="true" text="Prof. Dr. Elvio Gilberto da Silva" />
+
+  <p>Equipe</p>
+  <app-user-item [icon]="true" text="Arthur Marques de Oliveira" [tags]="[tagsPreset.design, tagsPreset.mobile]" />
+  <app-user-item [icon]="true" text="João Erik da Silva Crisóstomo" [tags]="[tagsPreset.mobile]" />
+  <app-user-item [icon]="true" text="Lucas Vieira da Silva" [tags]="[tagsPreset.frontend]" />
+  <app-user-item [icon]="true" text="Luiz Felipe Santana dos Santos" [tags]="[]" />
+  <app-user-item [icon]="true" text="Matheus Henrique Crispim Cola" [tags]="[]" />
+  <app-user-item [icon]="true" text="Pedro Henrique Vieira Ribeiro" [tags]="[tagsPreset.backend]" />
+  <app-user-item [icon]="true" text="Richard Rodrigues da Silva" [tags]="[tagsPreset.design, tagsPreset.frontend]" />
+  <app-user-item [icon]="true" text="Vinicius Henrique Santos Pinto" [tags]="[]" />
+
+  <div class="image-div">
+    <p>Desenvolvimento</p>
+    <span>José Augusto Magalhães – Coordenador de Extensão</span>
+    <img src="assets/imgs/logo-coordenadoria-extensao.png" alt="Logo da Coordenadoria de Extensão da UNISAGRADO">
+  </div>
+
+  <div class="image-div">
+    <p>Apoio</p>
+    <img src="assets/imgs/logo-unisagrado.png" alt="Logo da UNISAGRADO">
+  </div>
+
+</ion-content>

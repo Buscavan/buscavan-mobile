@@ -1,0 +1,15 @@
+<ion-item>
+  <div slot="start" class="userImage">
+    <img [src]="userImg" alt="User image" *ngIf="icon === false">
+    <img src="assets/imgs/user-avatar.png" alt="User image" *ngIf="icon === true">
+  </div>
+
+  <div class="info">
+    <span>
+      {{ text }}
+    </span>
+    <div class="tags">
+      <ion-badge *ngFor="let tag of tags" [ngStyle]="{'background-color': tag.background, 'color': tag.color}">{{ tag.text }}</ion-badge>
+    </div>
+  </div>
+</ion-item>

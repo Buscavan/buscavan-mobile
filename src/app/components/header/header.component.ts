@@ -19,13 +19,16 @@ export class HeaderComponent {
   color: String = '#000000';
 
   @Input()
-  hasIcon: boolean = true;
+  hasMenu: boolean = true;
 
   @Input()
   backButton: boolean = false;
 
   @Input()
   transparent: boolean = false;
+
+  @Input()
+  defaultHref: string = '/';
 
   constructor(private menuCtrl: MenuController) { }
 
