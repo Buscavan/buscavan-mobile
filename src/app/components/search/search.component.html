@@ -1,0 +1,18 @@
+<div>
+  <h1>{{ title }}</h1>
+
+  <app-input [placeholder]="input.placeholder" [label]="input.label" [size]="input.size"></app-input>
+
+  <div *ngIf="filterInputs.length >= 1">
+    <span>
+      Mostrar filtros
+      <ion-icon name="options"></ion-icon>
+    </span>
+
+    <app-input *ngFor="let filterInput of filterInputs" [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size"></app-input>
+  </div>
+
+  <ion-button>
+    {{ buttonText }}
+  </ion-button>
+</div>
