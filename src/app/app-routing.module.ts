@@ -25,6 +25,10 @@ const routes: Routes = [
     path: 'credits',
     loadChildren: () => import('./pages/credits/credits.module').then( m => m.CreditsPageModule)
   },
+  {
+    path: 'tab4',
+    loadChildren: () => import('./pages/tabs/tab4/tab4.module').then( m => m.Tab4PageModule)
+  },
 
 ];
 @NgModule({
