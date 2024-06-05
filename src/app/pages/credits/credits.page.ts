@@ -8,10 +8,10 @@ import { Tag } from 'src/app/interfaces/tag';
 })
 export class CreditsPage {
   public tagsPreset = {
-    mobile: { text: 'mobile', background: '#81A4CD', color: '#ffffff' },
+    mobile: { text: 'mobile', background: '#3880FF', color: '#ffffff' },
     frontend: { text: 'frontend', background: '#2A2B2A', color: '#ffffff' },
-    backend: { text: 'backend', background: '#97DB4F', color: '#000000' },
-    design: { text: 'design', background: '#D295BF', color: '#ffffff' },
+    backend: { text: 'backend', background: '#6DB33F', color: '#ffffff' },
+    design: { text: 'design', background: '#F24E1E', color: '#ffffff' },
   };
 
   constructor() {}
