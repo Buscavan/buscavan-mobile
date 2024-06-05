@@ -4,12 +4,16 @@
   <app-input [placeholder]="input.placeholder" [label]="input.label" [size]="input.size"></app-input>
 
   <div *ngIf="filterInputs.length >= 1">
-    <span>
-      Mostrar filtros
+    <span class="inputTrigger" (click)="handleFilterInputs()">
+      <span *ngIf="filterInputsVisible">Ocultar</span>
+      <span *ngIf="!filterInputsVisible">Mostrar</span>
+      filtros
       <ion-icon name="options"></ion-icon>
     </span>
 
-    <app-input *ngFor="let filterInput of filterInputs" [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size"></app-input>
+    <div class="filterInputs" [ngStyle]="filterInputsVisible ? {display: 'block'} : {display: 'none'}">
+      <app-input *ngFor="let filterInput of filterInputs" [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size"></app-input>
+    </div>
   </div>
 
   <ion-button>

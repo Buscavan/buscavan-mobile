@@ -28,5 +28,11 @@ export class SearchComponent {
   @Input()
   filterInputs: InputComponent[] = [];
 
+  filterInputsVisible = false;
+
   constructor() { }
+
+  handleFilterInputs() {
+    this.filterInputsVisible = !this.filterInputsVisible;
+  }
 }
