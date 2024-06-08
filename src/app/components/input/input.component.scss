@@ -1,11 +1,17 @@
 ion-input {
-  min-height: 40px;
-  height: 40px;
+  margin-top: 3px;
   --background: #ffffff;
   --border-color: #E4E4E7;
-  --border-radius: 6px;
+  --border-radius: 6px !important;
   --placeholder-color: #71717A;
   --highlight-color-focused: #71717A;
   --color: #000000;
   --border-width: 1px;
+  --padding-top: 8px !important;
+  --padding-bottom: 8px !important;
+  --padding-start: 12px !important;
+}
+
+ion-label {
+  font-weight: 600;
 }

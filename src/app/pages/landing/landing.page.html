@@ -18,12 +18,13 @@
 
       <ion-card-content>
         <div class="locationFilter">
-            <ion-input label="Origem" labelPlacement="stacked" placeholder="Lençóis Paulista, SP" fill="outline"></ion-input>
-            <ion-input label="Destino" labelPlacement="stacked" placeholder="Campos do Jordão, SP" fill="outline"></ion-input>
+          <app-input placeholder="Lençóis Paulista, SP" label="Origem"></app-input>
+          <div class="spacing"></div>
+          <app-input placeholder="Campos do Jordão, SP" label="Destino"></app-input>
         </div>
         <div class="dateFilter">
-            <ion-input label="De" labelPlacement="stacked" placeholder="dd/mm/yyyy" fill="outline" type="date"></ion-input>
-            <ion-input label="Até" labelPlacement="stacked" placeholder="dd/mm/yyyy" fill="outline" type="date"></ion-input>
+          <app-input placeholder="dd/mm/yyyy" label="De" type="date"></app-input>
+          <app-input placeholder="dd/mm/yyyy" label="Até" type="date"></app-input>
         </div>
 
         <ion-button expand="block" class="search" (click)="navigateByUrl('tabs')">Confirmar Busca</ion-button>
