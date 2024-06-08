@@ -1,0 +1,46 @@
+.search {
+  border: 1px solid #E4E4E7;
+  border-radius: 8px;
+  padding: 24px;
+
+  h1 {
+    color: #09090B;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 16px;
+  }
+
+  .filter {
+    margin-top: 12px;
+    margin-bottom: 24px;
+
+    .fitlerInputTrigger {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      color: #71717A;
+
+      ion-icon {
+        margin-left: 6px;
+      }
+    }
+
+    .filterInputs {
+      .filterInput {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  ion-button {
+    --background: #18181B;
+    --color: #FAFAFA;
+    --border-radius: 6px;
+    text-transform: none;
+    font-weight: 400;
+    font-size: 1rem;
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+  }
+}

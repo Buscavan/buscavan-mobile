@@ -1,22 +1,24 @@
-<div>
+<div class="search">
   <h1>{{ title }}</h1>
 
   <app-input [placeholder]="input.placeholder" [label]="input.label" [size]="input.size"></app-input>
 
-  <div *ngIf="filterInputs.length >= 1">
-    <span class="inputTrigger" (click)="handleFilterInputs()">
+  <div *ngIf="filterInputs.length >= 1" class="filter">
+    <span class="fitlerInputTrigger" (click)="handleFilterInputs()">
       <span *ngIf="filterInputsVisible">Ocultar</span>
       <span *ngIf="!filterInputsVisible">Mostrar</span>
-      filtros
+      &nbsp;filtros
       <ion-icon name="options"></ion-icon>
     </span>
 
     <div class="filterInputs" [ngStyle]="filterInputsVisible ? {display: 'block'} : {display: 'none'}">
-      <app-input *ngFor="let filterInput of filterInputs" [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size"></app-input>
+      <div class="filterInput" *ngFor="let filterInput of filterInputs">
+        <app-input [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size"></app-input>
+      </div>
     </div>
   </div>
 
-  <ion-button>
+  <ion-button size="block">
     {{ buttonText }}
   </ion-button>
 </div>
