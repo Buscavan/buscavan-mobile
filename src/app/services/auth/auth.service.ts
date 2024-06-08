@@ -17,4 +17,8 @@ export class AuthService {
     const user: User = await this.localStorage.get('user');
     return user;
   }
+
+  public async removeUser() {
+    return await this.localStorage.remove('user');
+  }
 }

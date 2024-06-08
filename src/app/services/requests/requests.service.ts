@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class RequestsService {
 
-  private backendURL = 'http://localhost:3000';
+  private readonly backendURL = 'http://localhost:3000';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -30,7 +30,7 @@ export class RequestsService {
     return response;
   }
 
-  public async delete(path: string, body: Object, url: string = this.backendURL): Promise<any> {
+  public async delete(path: string, url: string = this.backendURL): Promise<any> {
     const response = this.httpClient.delete(`${url}/${path}`, { observe: 'response' });
     return response;
   }

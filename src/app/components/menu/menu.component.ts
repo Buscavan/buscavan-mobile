@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Route, Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { IonicModule, MenuController } from '@ionic/angular';
-import { RouteView } from '@ionic/angular/common/directives/navigation/stack-utils';
 import { filter } from 'rxjs';
 import { User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -23,7 +22,7 @@ export class MenuComponent {
 
   public name: string = '';
 
-  constructor(private router: Router, private menuCtrl: MenuController, private route: ActivatedRoute, private authService: AuthService) {
+  constructor(private router: Router, private menuCtrl: MenuController, private authService: AuthService) {
     router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => this.reload());
   }
 
@@ -35,5 +34,10 @@ export class MenuComponent {
   public navigateByUrl(url: string) {
     this.menuCtrl.close('sidebar-menu');
     this.router.navigateByUrl(url);
+  }
+
+  public async exit() {
+    this.authService.removeUser();
+    this.navigateByUrl('/');
   }
 }
