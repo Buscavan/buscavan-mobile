@@ -1,21 +1,22 @@
 import { Component } from '@angular/core';
-import { InputProps } from 'src/app/interfaces/input.props';
+import { InputComponent } from 'src/app/components/input/input.component';
 
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss']
+  styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
+  searchInput: InputComponent[] = [
+    {
+      type: 'text',
+      placeholder: 'Lençóis Paulista, SP',
+      label: 'Destino',
+      size: 12,
+    },
+  ];
 
-  searchInput: InputProps = {
-    type: 'text',
-    placeholder: 'Lençóis Paulista, SP',
-    label: 'Destino',
-    size: 12,
-  };
-
-  searchFilterInputs: InputProps[] = [
+  searchFilterInputs: InputComponent[] = [
     {
       type: 'text',
       placeholder: 'Lençóis Paulista, SP',

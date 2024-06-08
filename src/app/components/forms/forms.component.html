@@ -1,7 +1,11 @@
-<div class="search">
+<div class="forms">
   <h1>{{ title }}</h1>
 
-  <app-input [placeholder]="input.placeholder" [label]="input.label" [size]="input.size"></app-input>
+  <div *ngFor="let input of inputs" class="inputs">
+    <div class="input">
+      <app-input [placeholder]="input.placeholder" [label]="input.label" [size]="input.size" [type]="input.type"></app-input>
+    </div>
+  </div>
 
   <div *ngIf="filterInputs.length >= 1" class="filter">
     <span class="fitlerInputTrigger" (click)="handleFilterInputs()">
@@ -13,12 +17,12 @@
 
     <div class="filterInputs" [ngStyle]="filterInputsVisible ? {display: 'block'} : {display: 'none'}">
       <div class="filterInput" *ngFor="let filterInput of filterInputs">
-        <app-input [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size"></app-input>
+        <app-input [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size" [type]="filterInput.type"></app-input>
       </div>
     </div>
   </div>
 
-  <ion-button size="block">
+  <ion-button size="block" (click)="click">
     {{ buttonText }}
   </ion-button>
 </div>

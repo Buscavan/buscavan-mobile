@@ -2,12 +2,11 @@ import { Component, Input } from '@angular/core';
 import { InputComponent } from '../input/input.component';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { InputProps } from 'src/app/interfaces/input.props';
 
 @Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss'],
+  selector: 'app-forms',
+  templateUrl: './forms.component.html',
+  styleUrls: ['./forms.component.scss'],
   standalone: true,
   imports: [
     IonicModule,
@@ -15,15 +14,18 @@ import { InputProps } from 'src/app/interfaces/input.props';
     InputComponent
   ]
 })
-export class SearchComponent {
+export class FormsComponent {
   @Input()
   title: string = '';
 
   @Input()
-  input!: InputProps;
+  inputs!: InputComponent[];
 
   @Input()
   buttonText: string = 'Confirmar';
+
+  @Input()
+  click = () => {};
 
   @Input()
   filterInputs: InputComponent[] = [];
