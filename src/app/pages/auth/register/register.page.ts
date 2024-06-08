@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { RequestsService } from '../../../services/requests/requests.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +20,8 @@ export class RegisterPage implements OnInit {
     private router: Router,
     private requestsService: RequestsService,
     private authService: AuthService,
-    private zone: NgZone
+    private zone: NgZone,
+    private toastController: ToastController
   ) {}
 
   public navigateByUrl(url: string) {
@@ -28,20 +30,20 @@ export class RegisterPage implements OnInit {
 
   public async register() {
     const valid = this.registerForm.valid;
-    if (!valid) return;
+    if (!valid) return this.presentErrorToast('campos não preenchidos corretamente');
     const value = this.registerForm.value;
-
-    console.log(this.registerForm);
-
     const request = await this.requestsService.post('users/create', value);
-    request.subscribe(async (response: any) => {
-      console.log('Response: ', response);
-      if (response.status === 201 && response.body) {
-        await this.authService
-          .setUser(response.body)
-          .then(() => this.zone.run(() => this.navigateByUrl('tabs')));
-      }
-    });
+    request.subscribe(
+      async (response: any) => {
+        if (response.status === 201 && response.body) {
+          await this.authService
+            .setUser(response.body)
+            .then(() => this.zone.run(() => this.navigateByUrl('tabs')));
+          this.presentRegisterToast();
+        }
+      },
+      (err: Error) => this.presentErrorToast(err.message)
+    );
   }
 
   ngOnInit(): void {
@@ -68,5 +70,27 @@ export class RegisterPage implements OnInit {
     let pattern = /^([0-9])$/;
     let result = pattern.test(event.key);
     return result;
+  }
+
+  async presentRegisterToast() {
+    const toast = await this.toastController.create({
+      message: 'Seja bem vindo!',
+      duration: 1500,
+      position: 'bottom',
+      cssClass: 'toast success',
+    });
+
+    await toast.present();
+  }
+
+  async presentErrorToast(error: string) {
+    const toast = await this.toastController.create({
+      message: `Erro: ${error}`,
+      duration: 1500,
+      position: 'bottom',
+      cssClass: 'toast error',
+    });
+
+    await toast.present();
   }
 }
