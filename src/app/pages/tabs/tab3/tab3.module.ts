@@ -7,6 +7,7 @@ import { Tab3Page } from './tab3.page';
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { HeaderComponent } from '../../../components/header/header.component';
 import { FormsComponent } from 'src/app/components/forms/forms.component';
+import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { FormsComponent } from 'src/app/components/forms/forms.component';
     FormsModule,
     Tab3PageRoutingModule,
     HeaderComponent,
-    FormsComponent
+    FormsComponent,
+    IonicInputMaskModule
   ],
   declarations: [Tab3Page]
 })

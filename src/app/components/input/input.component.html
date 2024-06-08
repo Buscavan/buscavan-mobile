@@ -1,4 +1,12 @@
-<div>
+<div *ngIf="formGroup" [formGroup]="formGroup">
   <ion-label>{{ label }}</ion-label>
-  <ion-input [placeholder]="placeholder" [type]="type"  fill="outline"></ion-input>
+  <ion-input *ngIf="!name" [placeholder]="placeholder" [type]="type"  fill="outline"></ion-input>
+  <ion-input *ngIf="name" [placeholder]="placeholder" [type]="type"  fill="outline" [name]="name" [formControlName]="name"></ion-input>
 </div>
+
+<div *ngIf="!formGroup">
+  <ion-label>{{ label }}</ion-label>
+  <ion-input *ngIf="!name" [placeholder]="placeholder" [type]="type"  fill="outline"></ion-input>
+  <ion-input *ngIf="name" [placeholder]="placeholder" [type]="type"  fill="outline" [name]="name" [formControlName]="name"></ion-input>
+</div>
+

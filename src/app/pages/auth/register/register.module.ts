@@ -18,7 +18,6 @@ import { IonicInputMaskModule } from '@thiagoprz/ionic-input-mask';
     RegisterPageRoutingModule,
     HeaderComponent,
     ReactiveFormsModule,
-    FormsModule,
     IonicInputMaskModule
   ],
   declarations: [RegisterPage]

@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
 import { InputComponent } from '../input/input.component';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Output, Component, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-forms',
@@ -11,8 +12,10 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     IonicModule,
     CommonModule,
-    InputComponent
-  ]
+    InputComponent,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class FormsComponent {
   @Input()
@@ -25,16 +28,23 @@ export class FormsComponent {
   buttonText: string = 'Confirmar';
 
   @Input()
-  click = () => {};
+  filterInputs: InputComponent[] = [];
 
   @Input()
-  filterInputs: InputComponent[] = [];
+  formGroup?: FormGroup;
 
   filterInputsVisible = false;
 
-  constructor() { }
+  @Output()
+  $submit = new EventEmitter();
+
+  constructor() {}
 
   handleFilterInputs() {
     this.filterInputsVisible = !this.filterInputsVisible;
+  }
+
+  handleClick() {
+    this.$submit.emit();
   }
 }

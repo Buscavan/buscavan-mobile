@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -10,6 +11,8 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     IonicModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class InputComponent {
@@ -25,6 +28,12 @@ export class InputComponent {
 
   @Input()
   size: number = 12;
+
+  @Input()
+  name?: string;
+
+  @Input()
+  formGroup?: FormGroup;
 
   constructor() { }
 

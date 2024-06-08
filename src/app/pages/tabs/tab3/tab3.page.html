@@ -1,5 +1,5 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <app-forms title="Cadastrar novo veículo" [inputs]="searchInputs" buttonText="Cadastrar" />
+  <app-forms title="Cadastrar novo veículo" [inputs]="searchInputs" buttonText="Cadastrar" [formGroup]="automobileForm" ($submit)="registerAutomobile()" />
 </ion-content>

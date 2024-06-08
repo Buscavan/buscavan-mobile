@@ -1,9 +1,11 @@
-<div class="forms">
+
+<form class="forms">
   <h1>{{ title }}</h1>
 
   <div *ngFor="let input of inputs" class="inputs">
     <div class="input">
-      <app-input [placeholder]="input.placeholder" [label]="input.label" [size]="input.size" [type]="input.type"></app-input>
+      <app-input *ngIf="formGroup" [formGroup]="formGroup" [placeholder]="input.placeholder" [label]="input.label" [size]="input.size" [type]="input.type" [name]="input.name"></app-input>
+      <app-input *ngIf="!formGroup" [placeholder]="input.placeholder" [label]="input.label" [size]="input.size" [type]="input.type"></app-input>
     </div>
   </div>
 
@@ -17,12 +19,13 @@
 
     <div class="filterInputs" [ngStyle]="filterInputsVisible ? {display: 'block'} : {display: 'none'}">
       <div class="filterInput" *ngFor="let filterInput of filterInputs">
-        <app-input [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size" [type]="filterInput.type"></app-input>
+        <app-input *ngIf="formGroup" [formGroup]="formGroup" [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size" [type]="filterInput.type" [name]="filterInput.name"></app-input>
+        <app-input *ngIf="!formGroup" [placeholder]="filterInput.placeholder" [label]="filterInput.label" [size]="filterInput.size" [type]="filterInput.type"></app-input>
       </div>
     </div>
   </div>
 
-  <ion-button size="block" (click)="click">
+  <ion-button size="block" (click)="handleClick()">
     {{ buttonText }}
   </ion-button>
-</div>
+</form>
