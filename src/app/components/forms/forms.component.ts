@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Output, Component, EventEmitter, Input } from '@angular/core';
-import { DarkModeService } from 'src/app/services/dark-mode/dark-mode.service';
 
 @Component({
   selector: 'app-forms',
@@ -39,14 +38,13 @@ export class FormsComponent {
   @Output()
   $submit = new EventEmitter();
 
-  constructor( private dark: DarkModeService) {}
+  constructor() {}
 
   handleFilterInputs() {
     this.filterInputsVisible = !this.filterInputsVisible;
   }
 
   handleClick() {
-    this.dark.switchMode();
     this.$submit.emit();
   }
 }
