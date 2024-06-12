@@ -11,24 +11,32 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   standalone: true,
-  imports: [
-    IonicModule,
-    CommonModule
-  ]
+  imports: [IonicModule, CommonModule],
 })
 export class MenuComponent {
-
   private user: User | undefined;
 
   public name: string = '';
+  public firstName: string = '';
 
-  constructor(private router: Router, private menuCtrl: MenuController, private authService: AuthService) {
-    router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => this.reload());
+  constructor(
+    private router: Router,
+    private menuCtrl: MenuController,
+    private authService: AuthService
+  ) {
+    router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(() => this.reload());
   }
 
   private async reload() {
     this.user = await this.authService.getUser();
     this.name = this.user.name;
+    this.getFirstName();
+  }
+
+  getFirstName(): void {
+    this.firstName = this.name.split(' ')[0];
   }
 
   public navigateByUrl(url: string) {
