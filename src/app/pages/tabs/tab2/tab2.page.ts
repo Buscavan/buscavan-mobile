@@ -13,6 +13,7 @@ export class Tab2Page {
       placeholder: 'Lençóis Paulista, SP',
       label: 'Destino',
       size: 12,
+      disabled: false
     },
   ];
 
@@ -22,18 +23,21 @@ export class Tab2Page {
       placeholder: 'Lençóis Paulista, SP',
       label: 'Origem',
       size: 12,
+      disabled: false
     },
     {
       type: 'date',
       placeholder: 'dd/mm/yyyy',
       label: 'De',
       size: 12,
+      disabled: false
     },
     {
       type: 'date',
       placeholder: 'dd/mm/yyyy',
       label: 'Até',
       size: 12,
+      disabled: false
     },
   ];
 

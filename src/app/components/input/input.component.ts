@@ -35,6 +35,9 @@ export class InputComponent {
   @Input()
   formGroup?: FormGroup;
 
+  @Input()
+  disabled: boolean = false;
+
   constructor() { }
 
 }

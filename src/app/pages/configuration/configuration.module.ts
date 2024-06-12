@@ -8,6 +8,7 @@ import { ConfigurationPageRoutingModule } from './configuration-routing.module';
 
 import { ConfigurationPage } from './configuration.page';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { FormsComponent } from 'src/app/components/forms/forms.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
     FormsModule,
     IonicModule,
     ConfigurationPageRoutingModule,
-    HeaderComponent
+    HeaderComponent,
+    FormsComponent
   ],
   declarations: [ConfigurationPage]
 })

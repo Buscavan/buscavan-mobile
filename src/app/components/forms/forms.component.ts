@@ -33,6 +33,12 @@ export class FormsComponent {
   @Input()
   formGroup?: FormGroup;
 
+  @Input()
+  editable?: boolean = true;
+
+  @Input()
+  editButton?: boolean = false;
+
   filterInputsVisible = false;
 
   @Output()
