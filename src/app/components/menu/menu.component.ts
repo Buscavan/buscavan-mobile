@@ -5,13 +5,14 @@ import { IonicModule, MenuController } from '@ionic/angular';
 import { filter } from 'rxjs';
 import { User } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { SwitchThemeButtonComponent } from '../switch-theme-button/switch-theme-button.component';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule],
+  imports: [IonicModule, CommonModule, SwitchThemeButtonComponent],
 })
 export class MenuComponent {
   private user: User | undefined;

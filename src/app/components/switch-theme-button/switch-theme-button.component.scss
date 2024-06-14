@@ -44,3 +44,19 @@
     font-size: 22.5px;
   }
 }
+
+.theme {
+  display: flex;
+  height: auto;
+
+  ion-text {
+    margin: auto;
+  }
+}
+
+.switchButton {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
