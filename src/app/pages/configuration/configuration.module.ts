@@ -9,6 +9,7 @@ import { ConfigurationPageRoutingModule } from './configuration-routing.module';
 import { ConfigurationPage } from './configuration.page';
 import { HeaderComponent } from 'src/app/components/header/header.component';
 import { FormsComponent } from 'src/app/components/forms/forms.component';
+import { SwitchThemeButtonComponent } from 'src/app/components/switch-theme-button/switch-theme-button.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { FormsComponent } from 'src/app/components/forms/forms.component';
     IonicModule,
     ConfigurationPageRoutingModule,
     HeaderComponent,
-    FormsComponent
+    FormsComponent,
+    SwitchThemeButtonComponent
   ],
   declarations: [ConfigurationPage]
 })

@@ -1,0 +1,12 @@
+<ion-button *ngIf="!isDark" (click)="setDarkMode(true)">
+  <span class="switch switch-light">
+    <ion-icon name="sunny" color="warning" class="icon icon-light"></ion-icon>
+    <div></div>
+  </span>
+</ion-button>
+<ion-button *ngIf="isDark" (click)="setDarkMode(false)">
+  <span class="switch switch-dark">
+    <div></div>
+    <ion-icon name="moon" color="warning" class="icon icon-dark"></ion-icon>
+  </span>
+</ion-button>

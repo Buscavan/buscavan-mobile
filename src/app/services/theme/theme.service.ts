@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class DarkModeService {
+export class ThemeService {
 
   private isCurrentAsDarkMode = false;
   private html = document.querySelector('html');
