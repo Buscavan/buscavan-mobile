@@ -46,8 +46,9 @@
       [disabled]="isButtonDisabled || false"
       [value]="value"
     ></ion-input>
-    <div>
-      <ion-icon name="brush-outline" *ngIf="editButton" color="bv-danger" class="editIcon" (click)="turnDisabled()"></ion-icon>
+
+    <div *ngIf="editButton" [ngStyle]="editButton && {'width': '10%', 'margin-left': '10px'}">
+      <ion-icon name="brush-outline" color="bv-danger" class="editIcon" (click)="turnDisabled()"></ion-icon>
     </div>
   </div>
 </div>
