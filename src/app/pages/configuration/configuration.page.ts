@@ -14,21 +14,30 @@ export class ConfigurationPage {
       placeholder: 'João Erik da Silva Crisóstomo',
       label: 'Nome',
       size: 12,
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
     {
       type: 'text',
       placeholder: 'joao@gmail.com',
       label: 'E-mail',
       size: 12,
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
     {
       type: 'text',
       placeholder: '123.456.789-10',
       label: 'CPF',
       size: 12,
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
   ];
 

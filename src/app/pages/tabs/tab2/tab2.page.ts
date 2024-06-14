@@ -13,7 +13,10 @@ export class Tab2Page {
       placeholder: 'Lençóis Paulista, SP',
       label: 'Destino',
       size: 12,
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
   ];
 
@@ -23,21 +26,30 @@ export class Tab2Page {
       placeholder: 'Lençóis Paulista, SP',
       label: 'Origem',
       size: 12,
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
     {
       type: 'date',
       placeholder: 'dd/mm/yyyy',
       label: 'De',
       size: 12,
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
     {
       type: 'date',
       placeholder: 'dd/mm/yyyy',
       label: 'Até',
       size: 12,
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
   ];
 

@@ -20,7 +20,10 @@ export class Tab3Page implements OnInit {
       label: 'Placa',
       size: 12,
       name: 'placa',
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
     {
       type: 'number',
@@ -28,7 +31,10 @@ export class Tab3Page implements OnInit {
       label: 'Capacidade',
       size: 12,
       name: 'capacidade',
-      disabled: false
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
     },
   ];
 

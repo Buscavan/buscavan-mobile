@@ -1,12 +1,53 @@
 <div *ngIf="formGroup" [formGroup]="formGroup">
   <ion-label>{{ label }}</ion-label>
-  <ion-input *ngIf="!name" [placeholder]="placeholder" [type]="type"  fill="outline" [disabled]="disabled"></ion-input>
-  <ion-input *ngIf="name" [placeholder]="placeholder" [type]="type"  fill="outline" [name]="name" [formControlName]="name" [disabled]="disabled"></ion-input>
+  <div class="input">
+    <ion-input
+      *ngIf="!name"
+      [placeholder]="placeholder"
+      [type]="type"
+      fill="outline"
+      [disabled]="isButtonDisabled"
+      [value]="value"
+    ></ion-input>
+    <ion-input
+      *ngIf="name"
+      [placeholder]="placeholder"
+      [type]="type"
+      fill="outline"
+      [name]="name"
+      [formControlName]="name"
+      [disabled]="isButtonDisabled || false"
+      [value]="value"
+    ></ion-input>
+    <div>
+      <ion-icon name="brush-outline" *ngIf="editButton" color="bv-danger" class="editIcon" (click)="turnDisabled()"></ion-icon>
+    </div>
+  </div>
 </div>
 
 <div *ngIf="!formGroup">
   <ion-label>{{ label }}</ion-label>
-  <ion-input *ngIf="!name" [placeholder]="placeholder" [type]="type"  fill="outline" [disabled]="disabled"></ion-input>
-  <ion-input *ngIf="name" [placeholder]="placeholder" [type]="type"  fill="outline" [name]="name" [formControlName]="name" [disabled]="disabled"></ion-input>
+  <div class="input">
+    <ion-input
+      *ngIf="!name"
+      [placeholder]="placeholder"
+      [type]="type"
+      fill="outline"
+      [disabled]="isButtonDisabled"
+      [value]="value"
+    ></ion-input>
+    <ion-input
+      *ngIf="name"
+      [placeholder]="placeholder"
+      [type]="type"
+      fill="outline"
+      [name]="name"
+      [formControlName]="name"
+      [disabled]="isButtonDisabled || false"
+      [value]="value"
+    ></ion-input>
+    <div>
+      <ion-icon name="brush-outline" *ngIf="editButton" color="bv-danger" class="editIcon" (click)="turnDisabled()"></ion-icon>
+    </div>
+  </div>
 </div>
-

@@ -16,6 +16,7 @@
         [type]="input.type"
         [name]="input.name"
         [disabled]="!editable"
+        [editButton]="editButton"
       ></app-input>
       <app-input
         *ngIf="!formGroup"
@@ -24,6 +25,7 @@
         [size]="input.size"
         [type]="input.type"
         [disabled]="!editable"
+        [editButton]="editButton"
       ></app-input>
     </div>
   </div>
@@ -52,6 +54,7 @@
           [type]="filterInput.type"
           [name]="filterInput.name"
           [disabled]="!editable"
+          [editButton]="editButton"
         ></app-input>
         <app-input
           *ngIf="!formGroup"
@@ -60,6 +63,7 @@
           [size]="filterInput.size"
           [type]="filterInput.type"
           [disabled]="!editable"
+          [editButton]="editButton"
         ></app-input>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
@@ -15,7 +15,7 @@ import { IonicModule } from '@ionic/angular';
     ReactiveFormsModule
   ]
 })
-export class InputComponent {
+export class InputComponent implements OnInit {
 
   @Input()
   placeholder: string = '';
@@ -38,6 +38,21 @@ export class InputComponent {
   @Input()
   disabled: boolean = false;
 
+  @Input()
+  editButton?: boolean = false;
+
+  @Input()
+  value: string = '';
+
+  isButtonDisabled?: boolean = false;
+
   constructor() { }
 
+  ngOnInit() {
+    this.isButtonDisabled = (this.disabled || this.editButton || false);
+  }
+
+  turnDisabled() {
+    this.isButtonDisabled = !this.isButtonDisabled;
+  }
 }
