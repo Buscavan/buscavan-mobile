@@ -10,7 +10,7 @@
         <ng-content select="[customButton]"></ng-content>
       </div>
       <ion-button (click)="openMenu()" *ngIf="hasMenu && !customButton.children.length">
-        <ion-icon name="menu-outline" slot="icon-only"></ion-icon>
+        <ion-icon src="assets/icons/bars.svg" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
