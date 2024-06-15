@@ -5,7 +5,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  color: #000000;
   font-weight: 900;
 }
 
@@ -24,7 +23,7 @@
 }
 
 .line {
-  background-color: #f0f0f0;
+  background-color: var(--ion-color-bv-text-tertiary);
   min-height: 1px;
   width: 100%;
   margin-bottom: 15px;
@@ -44,13 +43,12 @@
 
     ion-icon {
       font-size: 2rem;
-      color: #dc5757;
       margin: auto;
     }
     h1 {
       font-size: 2rem;
       margin: auto;
-      color: #000000;
+      color: var(--ion-color-bv-text-primary);
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -59,7 +57,7 @@
   }
 
   p {
-    color: #46b896;
+    color: var(--ion-color-bv-success);
     font-size: 1.5rem;
     font-weight: 700;
   }

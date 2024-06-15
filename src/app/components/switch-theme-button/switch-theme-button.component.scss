@@ -7,30 +7,8 @@
   padding-right: 4px;
   padding-left: 4px;
   justify-content: space-between;
-
-  &.switch-dark {
-    background-color: #2B2B2B;
-  }
-
-  &.switch-light {
-    background-color: #e9e9e9;
-  }
-
-  // .icon {
-  //   aspect-ratio: 1;
-  //   height: 18px;
-  //   border-radius: 100%;
-
-  //   &.icon-dark {
-  //     margin-right: auto;
-  //     margin-left: 3px;
-  //   }
-
-  //   &.icon-light {
-  //     margin-left: auto;
-  //     margin-right: 3px;
-  //   }
-  // }
+  background-color: var(--ion-color-bv-light);
+  border: 1px solid var(--ion-color-bv-dark);
 
   div {
     aspect-ratio: 1;

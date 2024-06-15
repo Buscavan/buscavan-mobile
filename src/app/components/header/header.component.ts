@@ -14,10 +14,6 @@ import { MenuController } from '@ionic/angular';
   ]
 })
 export class HeaderComponent {
-
-  @Input()
-  color: String = '#000000';
-
   @Input()
   hasMenu: boolean = true;
 

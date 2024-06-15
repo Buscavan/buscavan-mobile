@@ -1,6 +1,5 @@
 ion-toolbar {
   text-align: center;
-  --background: #ffffff;
   --min-height: 64px;
   --height: 64px;
 
@@ -13,13 +12,9 @@ ion-toolbar {
 }
 
 .transparentToolbar {
-  --background: #ffffff00;
+  --background: #ffffff00 !important;
 }
 
 .transparentHeader {
   box-shadow: none;
-}
-
-ion-back-button {
-  color: #000000;
 }

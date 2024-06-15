@@ -8,6 +8,7 @@
       fill="outline"
       [disabled]="isButtonDisabled"
       [value]="value"
+      color="bv-dark"
     ></ion-input>
     <ion-input
       *ngIf="name"
@@ -18,9 +19,16 @@
       [formControlName]="name"
       [disabled]="isButtonDisabled || false"
       [value]="value"
+      color="bv-dark"
     ></ion-input>
     <div>
-      <ion-icon src="assets/icons/pencil.svg" *ngIf="editButton" color="bv-danger" class="editIcon" (click)="turnDisabled()"></ion-icon>
+      <ion-icon
+        src="assets/icons/pencil.svg"
+        *ngIf="editButton"
+        color="bv-danger"
+        class="editIcon"
+        (click)="turnDisabled()"
+      ></ion-icon>
     </div>
   </div>
 </div>
@@ -35,6 +43,7 @@
       fill="outline"
       [disabled]="isButtonDisabled"
       [value]="value"
+      color="bv-dark"
     ></ion-input>
     <ion-input
       *ngIf="name"
@@ -45,10 +54,19 @@
       [formControlName]="name"
       [disabled]="isButtonDisabled || false"
       [value]="value"
+      color="bv-dark"
     ></ion-input>
 
-    <div *ngIf="editButton" [ngStyle]="editButton && {'width': '10%', 'margin-left': '10px'}">
-      <ion-icon src="assets/icons/pencil.svg" color="bv-danger" class="editIcon" (click)="turnDisabled()"></ion-icon>
+    <div
+      *ngIf="editButton"
+      [ngStyle]="editButton && { width: '10%', 'margin-left': '10px' }"
+    >
+      <ion-icon
+        src="assets/icons/pencil.svg"
+        color="bv-danger"
+        class="editIcon"
+        (click)="turnDisabled()"
+      ></ion-icon>
     </div>
   </div>
 </div>

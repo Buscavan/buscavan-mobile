@@ -1,4 +1,4 @@
-<form class="forms">
+<ion-card class="forms" color="bv-light">
   <h1>{{ title }}</h1>
 
   <div>
@@ -31,12 +31,12 @@
   </div>
 
   <div *ngIf="filterInputs.length >= 1" class="filter">
-    <span class="fitlerInputTrigger" (click)="handleFilterInputs()">
+    <ion-text class="fitlerInputTrigger" (click)="handleFilterInputs()" color="bv-text-secondary">
       <span *ngIf="filterInputsVisible">Ocultar</span>
       <span *ngIf="!filterInputsVisible">Mostrar</span>
       &nbsp;filtros
       <ion-icon src="assets/icons/filter.svg"></ion-icon>
-    </span>
+    </ion-text>
 
     <div
       class="filterInputs"
@@ -76,4 +76,4 @@
   <div>
     <ng-content select="[end]"></ng-content>
   </div>
-</form>
+</ion-card>
