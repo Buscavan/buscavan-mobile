@@ -12,8 +12,8 @@ import { IonicModule } from '@ionic/angular';
     IonicModule,
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+  ],
 })
 export class InputComponent implements OnInit {
 
@@ -30,6 +30,9 @@ export class InputComponent implements OnInit {
   size: number = 12;
 
   @Input()
+  maxlength?: number;
+
+  @Input()
   name?: string;
 
   @Input()
@@ -43,6 +46,9 @@ export class InputComponent implements OnInit {
 
   @Input()
   value: string = '';
+
+  @Input()
+  mask?: string = '';
 
   isButtonDisabled?: boolean = false;
 

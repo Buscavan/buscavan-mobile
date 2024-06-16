@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RequestsService } from '../../../services/requests/requests.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
+import { InputComponent } from 'src/app/components/input/input.component';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,36 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  loginForm: any;
+  loginForm: any = 'aa';
   cpfrgx =
     '([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})';
+
+  searchInputs: InputComponent[] = [
+    {
+      type: 'text',
+      placeholder: '000.000.000-00',
+      label: 'CPF',
+      size: 12,
+      name: 'cpf',
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
+      mask: "***.***.***-**",
+      maxlength: 14,
+    },
+    {
+      type: 'password',
+      placeholder: 'Digite sua senha',
+      label: 'Senha',
+      size: 12,
+      name: 'password',
+      disabled: false,
+      ngOnInit: () => {},
+      turnDisabled: () => {},
+      value: '',
+    },
+  ];
 
   constructor(
     private router: Router,
@@ -58,12 +86,6 @@ export class LoginPage implements OnInit {
       ]),
     });
     console.log(this.loginForm);
-  }
-
-  numericOnly(event: any): boolean {
-    let pattern = /^([0-9])$/;
-    let result = pattern.test(event.key);
-    return result;
   }
 
   async presentLoginToast() {
