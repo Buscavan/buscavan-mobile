@@ -3,15 +3,15 @@
     <ion-text color="bv-dark">Tema</ion-text>
   </div>
   <ion-button *ngIf="!isDark" (click)="changeDarkMode(true)" fill="clear">
-    <span class="switch switch-light">
-      <ion-icon name="sunny" color="warning" class="icon icon-light"></ion-icon>
+    <span class="switch">
+      <ion-icon name="sunny" color="warning" class="icon"></ion-icon>
       <div></div>
     </span>
   </ion-button>
   <ion-button *ngIf="isDark" (click)="changeDarkMode(false)" fill="clear">
-    <span class="switch switch-dark">
+    <span class="switch">
       <div></div>
-      <ion-icon name="moon" color="warning" class="icon icon-dark"></ion-icon>
+      <ion-icon name="moon" color="warning" class="icon"></ion-icon>
     </span>
   </ion-button>
 </div>
