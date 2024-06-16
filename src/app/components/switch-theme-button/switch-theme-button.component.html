@@ -2,13 +2,13 @@
   <div class="theme" *ngIf="hasText">
     <ion-text color="bv-dark">Tema</ion-text>
   </div>
-  <ion-button *ngIf="!isDark" (click)="setDarkMode(true)" fill="clear">
+  <ion-button *ngIf="!isDark" (click)="changeDarkMode(true)" fill="clear">
     <span class="switch switch-light">
       <ion-icon name="sunny" color="warning" class="icon icon-light"></ion-icon>
       <div></div>
     </span>
   </ion-button>
-  <ion-button *ngIf="isDark" (click)="setDarkMode(false)" fill="clear">
+  <ion-button *ngIf="isDark" (click)="changeDarkMode(false)" fill="clear">
     <span class="switch switch-dark">
       <div></div>
       <ion-icon name="moon" color="warning" class="icon icon-dark"></ion-icon>

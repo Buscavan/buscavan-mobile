@@ -1,27 +1,39 @@
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from '../local-storage/local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
 
-  private isCurrentAsDarkMode = false;
   private html = document.querySelector('html');
   private readonly darkModeClass = 'ion-palette-dark';
 
-  constructor() { }
+  constructor(private localStorageService: LocalStorageService) { }
 
-  public getIsDarkMode(): boolean {
-    return this.isCurrentAsDarkMode;
+  public async getIsDarkMode(): Promise<boolean> {
+    const isCurrentAsDarkMode: boolean = await this.localStorageService.get('theme') === 'dark';
+    return isCurrentAsDarkMode;
   }
 
-  public setDarkMode(dark: boolean) {
-    this.isCurrentAsDarkMode = dark;
+  public async setDarkMode(dark: boolean) {
+    await this.localStorageService.set('theme', dark ? 'dark' : 'light');
+  }
+
+  public async changeDarkMode(dark: boolean) {
     dark ? this.html?.classList.add(this.darkModeClass) : this.html?.classList.remove(this.darkModeClass);
+    this.setDarkMode(dark);
   }
 
-  public switchMode() {
-    this.isCurrentAsDarkMode ? this.html?.classList.remove(this.darkModeClass) : this.html?.classList.add(this.darkModeClass);
-    this.isCurrentAsDarkMode = !this.isCurrentAsDarkMode;
+  public async reloadDarkMode() {
+    const isCurrentAsDarkMode: boolean = await this.localStorageService.get('theme') === 'dark';
+    isCurrentAsDarkMode ? this.html?.classList.add(this.darkModeClass) : this.html?.classList.remove(this.darkModeClass);
+  }
+
+  public async switchMode() {
+    const isCurrentAsDarkMode: boolean = await this.localStorageService.get('theme') === 'dark';
+
+    isCurrentAsDarkMode ? this.html?.classList.remove(this.darkModeClass) : this.html?.classList.add(this.darkModeClass);
+    this.setDarkMode(!isCurrentAsDarkMode);
   }
 }

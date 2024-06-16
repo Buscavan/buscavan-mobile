@@ -22,13 +22,13 @@ export class SwitchThemeButtonComponent implements OnInit {
 
   constructor(private themeService: ThemeService) { }
 
-  ngOnInit() {
-    this.isDark = this.themeService.getIsDarkMode();
+  async ngOnInit() {
+    this.isDark = await this.themeService.getIsDarkMode();
   }
 
-  setDarkMode(dark: boolean) {
+  changeDarkMode(dark: boolean) {
     console.log(dark)
-    this.themeService.setDarkMode(dark);
+    this.themeService.changeDarkMode(dark);
     this.isDark = dark;
   }
 
