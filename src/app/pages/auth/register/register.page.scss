@@ -41,16 +41,12 @@
       font-size: 14px;
       font-weight: 500;
 
-      &.enter {
-        --background: #18181b;
-        --color: #fafafa;
-      }
       &.login {
         --background: #ffffff00;
-        --border-color: #e4e4e7;
+        --border-color: var(--ion-color-bv-text-tertiary);
         --border-style: solid;
         --border-width: 1px;
-        --color: #09090b;
+        --color: var(--ion-color-bv-text-primary);
       }
     }
 
@@ -82,17 +78,17 @@
 
 h1 {
   font-weight: bold;
-  color: #000000;
+  color: var(--ion-color-bv-text-primary);
   font-size: 24px;
 }
 
 p {
-  color: #52525b;
+  color: var(--ion-color-bv-text-secondary);
   font-size: 14px;
 }
 
 .errorLabel {
-  color: red;
+  color: var(--ion-color-bv-danger);
   font-size: 0.8rem;
   text-align: start;
 }

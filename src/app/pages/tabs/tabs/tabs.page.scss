@@ -1,6 +1,6 @@
 ion-tab-button {
-  --color: #A1A1AA;
-  --color-selected: #09090B;
+  --color: var(--ion-color-bv-dark-secondary);
+  --color-selected: var(--ion-color-bv-text-primary);
   --font-weight-selected: bold;
 }
 

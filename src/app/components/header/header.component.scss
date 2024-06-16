@@ -4,6 +4,7 @@ ion-toolbar {
   --height: 64px;
 
   ion-title {
+    color: var(--ion-color-bv-dark);
     font-weight: 900;
     font-style: italic;
     font-size: 20px;
@@ -17,4 +18,8 @@ ion-toolbar {
 
 .transparentHeader {
   box-shadow: none;
+}
+
+.whiteTitle {
+  color: #ffffff !important;
 }

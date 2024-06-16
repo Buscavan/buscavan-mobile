@@ -9,6 +9,7 @@ import { LandingPageRoutingModule } from './landing-routing.module';
 import { LandingPage } from './landing.page';
 import { HeaderComponent } from '../../components/header/header.component';
 import { InputComponent } from 'src/app/components/input/input.component';
+import { SwitchThemeButtonComponent } from 'src/app/components/switch-theme-button/switch-theme-button.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { InputComponent } from 'src/app/components/input/input.component';
     IonicModule,
     LandingPageRoutingModule,
     HeaderComponent,
-    InputComponent
+    InputComponent,
+    SwitchThemeButtonComponent
   ],
   declarations: [LandingPage]
 })

@@ -1,24 +1,24 @@
 h1 {
   font-size: 26px;
   font-weight: bold;
-  color: #09090b;
+  color: var(--ion-color-bv-text-primary);
 }
 
 h3 {
   font-size: 20px;
   font-weight: bold;
-  color: #09090b;
+  color: var(--ion-color-bv-text-primary);
 }
 
 p {
   font-size: 16px;
-  color: #09090b;
+  color: var(--ion-color-bv-text-secondary);
   margin-bottom: 5px;
 }
 
 span {
   font-size: 12px;
-  color: #3f3f46;
+  color: var(--ion-color-bv-text-secondary);
 }
 
 .desenvolvimento {
@@ -51,7 +51,7 @@ span {
 
   p {
     text-align: center;
-    color: #3b3b3f;
+    color: var(--ion-color-bv-text-secondary);
   }
 }
 

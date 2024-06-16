@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { ThemeService } from 'src/app/services/theme/theme.service';
 
@@ -14,6 +14,9 @@ import { ThemeService } from 'src/app/services/theme/theme.service';
   ]
 })
 export class SwitchThemeButtonComponent implements OnInit {
+
+  @Input()
+  hasText: boolean = true;
 
   isDark: boolean = false;
 

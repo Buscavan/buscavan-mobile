@@ -1,5 +1,5 @@
 <div class="switchButton">
-  <div class="theme">
+  <div class="theme" *ngIf="hasText">
     <ion-text color="bv-dark">Tema</ion-text>
   </div>
   <ion-button *ngIf="!isDark" (click)="setDarkMode(true)" fill="clear">

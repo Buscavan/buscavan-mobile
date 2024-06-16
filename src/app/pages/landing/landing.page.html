@@ -1,4 +1,6 @@
-<app-header [transparent]="true" [hasMenu]="false" color="#fafafa"></app-header>
+<app-header [transparent]="true" [hasMenu]="false">
+  <app-switch-theme-button customButton [hasText]="false"></app-switch-theme-button>
+</app-header>
 
 <ion-content [fullscreen]="true">
   <div class="landingPage">
@@ -10,7 +12,7 @@
     </div>
 
 
-    <ion-card class="searchCard">
+    <ion-card class="searchCard" color="bv-light">
       <ion-card-header>
         <ion-card-title>Busque por Aqui</ion-card-title>
         <ion-card-subtitle>Preencha os campos abaixo</ion-card-subtitle>
@@ -27,9 +29,9 @@
           <app-input placeholder="dd/mm/yyyy" label="Até" type="date"></app-input>
         </div>
 
-        <ion-button expand="block" class="search" (click)="handleSearch()">Confirmar Busca</ion-button>
+        <ion-button expand="block" class="search" (click)="handleSearch()" color="bv-dark">Confirmar Busca</ion-button>
         <div class="or"><span></span><p>ou</p><span></span></div>
-        <ion-button expand="block" class="authentication" (click)="navigateByUrl('login')">Entrar com uma conta</ion-button>
+        <ion-button expand="block" class="authentication" (click)="navigateByUrl('login')" color="bv-success">Entrar com uma conta</ion-button>
       </ion-card-content>
     </ion-card>
   </div>

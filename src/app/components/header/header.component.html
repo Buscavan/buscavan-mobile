@@ -9,9 +9,7 @@
         color="bv-text-primary"
       ></ion-back-button>
     </ion-buttons>
-    <ion-title [color]="transparent ? 'bv-light' : 'bv-text-primary'"
-      >BUSCAVAN</ion-title
-    >
+    <ion-title [ngClass]="{whiteTitle: transparent}">BUSCAVAN</ion-title>
     <ion-buttons slot="end">
       <div #customButton>
         <ng-content select="[customButton]"></ng-content>

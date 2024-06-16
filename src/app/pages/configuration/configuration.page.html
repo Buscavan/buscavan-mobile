@@ -1,14 +1,16 @@
 <app-header [backButton]="true" defaultHref="/tabs"></app-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <ion-card>
-    <app-forms [inputs]="inputs" [editButton]="true">
-      <div start class="forms-start">
-        <img class="profilePicture" alt="Foto de perfil" src="https://static.vecteezy.com/ti/vetor-gratis/p3/3715527-imagem-perfil-icone-masculino-icone-humano-ou-pessoa-sinal-e-simbolo-vetor.jpg">
-      </div>
-      <div end class="forms-end">
-        <ion-text color="bv-danger" class="deleteAccount">Excluir conta</ion-text>
-      </div>
-    </app-forms>
-  </ion-card>
+  <app-forms [inputs]="inputs" [editButton]="true">
+    <div start class="forms-start">
+      <img
+        class="profilePicture"
+        alt="Foto de perfil"
+        src="https://static.vecteezy.com/ti/vetor-gratis/p3/3715527-imagem-perfil-icone-masculino-icone-humano-ou-pessoa-sinal-e-simbolo-vetor.jpg"
+      />
+    </div>
+    <div end class="forms-end">
+      <ion-text color="bv-danger" class="deleteAccount">Excluir conta</ion-text>
+    </div>
+  </app-forms>
 </ion-content>
