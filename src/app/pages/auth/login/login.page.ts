@@ -32,11 +32,11 @@ export class LoginPage implements OnInit {
     if (!valid)
       return this.presentErrorToast('campos não preenchidos corretamente');
     const value = this.loginForm.value;
-    const request = await this.requestsService.post('users/login', value);
+    const request = await this.requestsService.post('auth/login', value);
     request.subscribe(
       async (response: any) => {
-        if (response.status === 201 && response.body) {
-          await this.authService.setUser(response.body).then(() => {
+        if (response.status === 200 && response.body) {
+          await this.authService.setUser(response.body.user).then(() => {
             this.zone.run(() => this.navigateByUrl('tabs'));
             this.presentLoginToast();
           });

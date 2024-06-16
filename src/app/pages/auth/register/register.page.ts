@@ -32,7 +32,7 @@ export class RegisterPage implements OnInit {
     const valid = this.registerForm.valid;
     if (!valid) return this.presentErrorToast('campos não preenchidos corretamente');
     const value = this.registerForm.value;
-    const request = await this.requestsService.post('users/create', value);
+    const request = await this.requestsService.post('auth/register', value);
     request.subscribe(
       async (response: any) => {
         if (response.status === 201 && response.body) {
