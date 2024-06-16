@@ -61,6 +61,8 @@ input[type='date'] {
 
 
 :root {
+  --landing-image: url('assets/imgs/landing-light.png');
+
 	--ion-color-bv-success: #10B981;
 	--ion-color-bv-success-rgb: 16,185,129;
 	--ion-color-bv-success-contrast: #ffffff;
@@ -119,6 +121,8 @@ input[type='date'] {
 }
 
 .ion-palette-dark.ios, .ion-palette-dark.md {
+  --landing-image: url('assets/imgs/landing-dark.jpg');
+
   --ion-color-bv-success: #10B981;
 	--ion-color-bv-success-rgb: 16,185,129;
 	--ion-color-bv-success-contrast: #ffffff;

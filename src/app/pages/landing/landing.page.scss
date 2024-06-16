@@ -1,5 +1,11 @@
+.ion-palette-dark.ios, .ion-palette-dark.md {
+  .landingPage {
+    background-image: url('../../../assets/imgs/user-avatar.png');
+  }
+}
+
 .landingPage {
-  background-image: url('../../../assets/imgs/background-newsletter.png');
+  background-image: var(--landing-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
