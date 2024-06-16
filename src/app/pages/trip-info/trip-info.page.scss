@@ -1,0 +1,39 @@
+ion-col {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+
+  ion-text {
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+
+    ion-icon {
+      margin-left: 4px;
+      font-size: 20px;
+    }
+  }
+
+  span {
+    color: var(--ion-color-bv-text-secondary);
+    font-size: 16px;
+
+    &.price {
+      color: var(--ion-color-bv-success);
+    }
+  }
+}
+
+ion-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ion-button {
+    height: 40px;
+    width: 90%;
+    text-transform: none;
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}

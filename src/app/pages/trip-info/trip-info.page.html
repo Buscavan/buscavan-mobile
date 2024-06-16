@@ -1,0 +1,89 @@
+<app-header [backButton]="true"></app-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <img [src]="trip.image" [alt]="trip.name">
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Local
+              <ion-icon src="assets/icons/place.svg"></ion-icon>
+            </ion-text>
+            <span>{{ trip.name }}</span>
+          </ion-col>
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Preço
+              <ion-icon src="assets/icons/currency.svg"></ion-icon>
+            </ion-text>
+            <span class="price">{{ trip.price | currency}}</span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Nome do motorista
+              <ion-icon src="assets/icons/person.svg"></ion-icon>
+            </ion-text>
+            <span>{{ trip.driver }}</span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Local de saída
+              <ion-icon src="assets/icons/clock.svg"></ion-icon>
+            </ion-text>
+            <span>{{ trip.location }}</span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Veículo
+              <ion-icon src="assets/icons/van.svg"></ion-icon>
+            </ion-text>
+            <span>{{ trip.vehicleName }}</span>
+          </ion-col>
+
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Capacidade
+              <ion-icon src="assets/icons/group.svg"></ion-icon>
+            </ion-text>
+            <span>{{ trip.capacity }}</span>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Ida
+              <ion-icon src="assets/icons/date-plus.svg"></ion-icon>
+            </ion-text>
+            <span>{{ trip.goingDate }}</span>
+          </ion-col>
+
+          <ion-col>
+            <ion-text class="title" color="bv-text-primary">
+              Volta
+              <ion-icon src="assets/icons/date-minus.svg"></ion-icon>
+            </ion-text>
+            <span>{{ trip.returnDate }}</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+
+    <ion-card-footer>
+      <ion-button color="bv-dark">Enviar mensagem</ion-button>
+    </ion-card-footer>
+
+  </ion-card>
+</ion-content>

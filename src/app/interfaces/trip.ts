@@ -6,7 +6,9 @@ interface Trip {
   tripImages: string[],
   capacity: number,
   driver: string,
-  date: string,
+  goingDate: string,
+  returnDate: string,
+  vehicleName: string,
 };
 
 export { Trip };

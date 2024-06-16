@@ -33,6 +33,10 @@ const routes: Routes = [
     path: 'configuration',
     loadChildren: () => import('./pages/configuration/configuration.module').then( m => m.ConfigurationPageModule)
   },
+  {
+    path: 'trip-info',
+    loadChildren: () => import('./pages/trip-info/trip-info.module').then( m => m.TripInfoPageModule)
+  },
 
 ];
 @NgModule({
