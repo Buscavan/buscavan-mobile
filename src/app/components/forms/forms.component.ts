@@ -39,9 +39,6 @@ export class FormsComponent {
   @Input()
   editButton?: boolean = false;
 
-  @Input()
-  lines?: boolean = true;
-
   filterInputsVisible = false;
 
   @Output()

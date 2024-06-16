@@ -1,9 +1,9 @@
 <ion-header [translucent]="true" [ngClass]="{ transparentHeader: transparent }">
-  <ion-toolbar [color]="!transparent && 'bv-light'" [ngClass]="{ transparentToolbar: transparent }">
+  <ion-toolbar [ngClass]="{ transparentToolbar: transparent }" color="bv-light">
     <ion-buttons slot="start" *ngIf="backButton">
       <ion-back-button [defaultHref]="defaultHref" color="bv-text-primary"></ion-back-button>
     </ion-buttons>
-    <ion-title [color]="transparent ? 'bv-light' : 'bv-text-primary'">BUSCAVAN</ion-title>
+    <ion-title color="bv-text-primary">BUSCAVAN</ion-title>
 
     <ion-buttons slot="end" >
       <div #customButton>

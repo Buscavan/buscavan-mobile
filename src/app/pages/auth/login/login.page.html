@@ -2,31 +2,44 @@
 
 <ion-content [fullscreen]="true">
   <div class="background">
-    <app-forms
-      [inputs]="searchInputs"
-      buttonText="Entrar no sistema"
-      [formGroup]="loginForm"
-      ($submit)="login()"
-      [lines]="false"
-    >
-      <div start>
-        <h1 class="ion-text-center">Faça Login no Buscavan</h1>
-        <p class="ion-text-center">Preencha os dados abaixo para entrar no sistema</p>
+    <div class="item">
+      <form [formGroup]="loginForm" (submit)="login()">
+        <h1>Faça Login no Buscavan</h1>
+        <p>Preencha os dados abaixo para entrar no sistema</p>
+        <ion-input
+          label="CPF"
+          labelPlacement="stacked"
+          placeholder="000.000.000-00"
+          fill="outline"
+          name="cpf"
+          formControlName="cpf"
+          maxlength="14"
+          (keypress)="numericOnly($event)"
+          mask="***.***.***-**"
+        ></ion-input>
+        <ion-input
+          label="Senha"
+          labelPlacement="stacked"
+          placeholder="Digite sua senha"
+          fill="outline"
+          type="password"
+          name="password"
+          formControlName="password"
+        ></ion-input>
+        <ion-button class="enter" type="submit">Entrar no sistema</ion-button>
+      </form>
+      <div class="or">
+        <span></span>
+        <p>OU</p>
+        <span></span>
       </div>
-      <div end>
-        <div class="or">
-          <span></span>
-          <p>OU</p>
-          <span></span>
-        </div>
-        <ion-button class="register" (click)="navigateByUrl('register')">
-          Cadastre-se em nossa plataforma
-        </ion-button>
-        <p class="ion-text-center">
-          Ao continuar, você concorda com os Termos de Serviço e Políticas de
-          Privacidade
-        </p>
-      </div>
-    </app-forms>
+      <ion-button class="register" (click)="navigateByUrl('register')">
+        Cadastre-se em nossa plataforma
+      </ion-button>
+      <p>
+        Ao continuar, você concorda com os Termos de Serviço e Políticas de
+        Privacidade
+      </p>
+    </div>
   </div>
 </ion-content>
