@@ -1,15 +1,25 @@
 <ion-header [translucent]="true" [ngClass]="{ transparentHeader: transparent }">
-  <ion-toolbar [ngClass]="{ transparentToolbar: transparent }" color="bv-light">
+  <ion-toolbar
+    [color]="!transparent && 'bv-light'"
+    [ngClass]="{ transparentToolbar: transparent }"
+  >
     <ion-buttons slot="start" *ngIf="backButton">
-      <ion-back-button [defaultHref]="defaultHref" color="bv-text-primary"></ion-back-button>
+      <ion-back-button
+        [defaultHref]="defaultHref"
+        color="bv-text-primary"
+      ></ion-back-button>
     </ion-buttons>
-    <ion-title color="bv-text-primary">BUSCAVAN</ion-title>
-
-    <ion-buttons slot="end" >
+    <ion-title [color]="transparent ? 'bv-light' : 'bv-text-primary'"
+      >BUSCAVAN</ion-title
+    >
+    <ion-buttons slot="end">
       <div #customButton>
         <ng-content select="[customButton]"></ng-content>
       </div>
-      <ion-button (click)="openMenu()" *ngIf="hasMenu && !customButton.children.length">
+      <ion-button
+        (click)="openMenu()"
+        *ngIf="hasMenu && !customButton.children.length"
+      >
         <ion-icon src="assets/icons/bars.svg" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>

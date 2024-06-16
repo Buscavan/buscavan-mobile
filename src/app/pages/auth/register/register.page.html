@@ -6,15 +6,17 @@
       <form [formGroup]="registerForm" (submit)="register()">
         <h1>Faça seu Registro aqui</h1>
         <p>Preencha os dados abaixo para cadastrar-se no sistema</p>
-        <ion-input
-          label="Nome"
-          labelPlacement="stacked"
-          placeholder="Digite seu nome"
-          fill="outline"
-          name="name"
-          formControlName="name"
-        >
-        </ion-input>
+        <div class="input">
+          <ion-label color="bv-text-primary">Nome</ion-label>
+          <ion-input
+            placeholder="Digite seu nome"
+            fill="outline"
+            name="name"
+            formControlName="name"
+            color="bv-black"
+          >
+          </ion-input>
+        </div>
         <div
           class="errorsLabels"
           *ngIf="registerForm.controls.name.invalid && (registerForm.controls.name.dirty || registerForm.controls.name.touched)"
@@ -36,14 +38,16 @@
           </ng-template>
         </div>
 
-        <ion-input
-          label="E-mail"
-          labelPlacement="stacked"
-          placeholder="nome@exemplo.com"
-          fill="outline"
-          name="email"
-          formControlName="email"
-        ></ion-input>
+        <div class="input">
+          <ion-label color="bv-text-primary">E-mail</ion-label>
+          <ion-input
+            placeholder="nome@exemplo.com"
+            fill="outline"
+            name="email"
+            formControlName="email"
+            color="bv-black"
+          ></ion-input>
+        </div>
         <div
           class="errorsLabels"
           *ngIf="registerForm.controls.email.invalid && (registerForm.controls.email.dirty || registerForm.controls.email.touched)"
@@ -60,17 +64,19 @@
 
         <div class="buttons">
           <div class="button">
-            <ion-input
-              label="CPF"
-              labelPlacement="stacked"
-              placeholder="000.000.000-00"
-              fill="outline"
-              name="cpf"
-              formControlName="cpf"
-              maxlength="14"
-              (keypress)="numericOnly($event)"
-              mask="***.***.***-**"
-            ></ion-input>
+            <div class="input">
+              <ion-label color="bv-text-primary">CPF</ion-label>
+              <ion-input
+                placeholder="000.000.000-00"
+                fill="outline"
+                name="cpf"
+                formControlName="cpf"
+                maxlength="14"
+                (keypress)="numericOnly($event)"
+                mask="***.***.***-**"
+                color="bv-black"
+              ></ion-input>
+            </div>
             <div
               class="errorsLabels"
               *ngIf="registerForm.controls.cpf.invalid && (registerForm.controls.cpf.dirty || registerForm.controls.cpf.touched)"
@@ -87,15 +93,17 @@
           </div>
 
           <div class="button">
-            <ion-input
-              label="Senha"
-              labelPlacement="stacked"
-              placeholder="Digite sua senha"
-              fill="outline"
-              type="password"
-              name="password"
-              formControlName="password"
-            ></ion-input>
+            <div class="input">
+              <ion-label color="bv-text-primary">Senha</ion-label>
+              <ion-input
+                placeholder="Digite sua senha"
+                fill="outline"
+                type="password"
+                name="password"
+                formControlName="password"
+                color="bv-black"
+              ></ion-input>
+            </div>
             <div
               class="errorsLabels"
               *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty || registerForm.controls.password.touched)"
