@@ -7,6 +7,7 @@ import { Tab2Page } from './tab2.page';
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { HeaderComponent } from '../../../components/header/header.component';
 import { FormsComponent } from 'src/app/components/forms/forms.component';
+import { TripItemComponent } from 'src/app/components/trip-item/trip-item.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { FormsComponent } from 'src/app/components/forms/forms.component';
     FormsModule,
     Tab2PageRoutingModule,
     HeaderComponent,
-    FormsComponent
+    FormsComponent,
+    TripItemComponent
   ],
   declarations: [Tab2Page]
 })

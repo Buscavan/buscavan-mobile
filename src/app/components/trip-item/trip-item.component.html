@@ -1,0 +1,18 @@
+<ion-item color="bv-light" lines="none">
+  <div>
+    <div class="imageContainer">
+      <img [src]="trip.image" [alt]="trip.name" />
+    </div>
+    <div class="infoContainer">
+      <ion-text class="name">{{ trip.name }}</ion-text>
+      <ion-text class="price">{{ trip.price | currency }}</ion-text>
+      <div>
+        <ion-text class="date">13/06/2024</ion-text>
+        <div class="capacityContainer">
+          <ion-text>16</ion-text>
+          <ion-icon src="assets/icons/group.svg"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-item>

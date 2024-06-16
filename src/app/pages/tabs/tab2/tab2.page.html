@@ -2,4 +2,7 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <app-forms title="Próxima parada?" [inputs]="searchInput" [filterInputs]="searchFilterInputs" buttonText="Confirmar Busca" />
+  <ion-list>
+    <app-trip-item [trip]="trip"></app-trip-item>
+  </ion-list>
 </ion-content>

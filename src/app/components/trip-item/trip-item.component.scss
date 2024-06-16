@@ -1,0 +1,25 @@
+$item-height: 90px;
+
+ion-item {
+  border: 1px solid var(--ion-color-bv-dark);
+  height: $item-height;
+
+  div {
+    height: $item-height;
+    width: 100%;
+    display: flex;
+
+    .imageContainer {
+      height: calc($item-height - ($item-height * .1));
+      width: calc($item-height - ($item-height * .1));
+      img {
+        height: 100%;
+        aspect-ratio: 1;
+      }
+    }
+
+    .infoContainer {
+      display: block;
+    }
+  }
+}

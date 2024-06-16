@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { InputComponent } from 'src/app/components/input/input.component';
+import { Trip } from 'src/app/interfaces/trip';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +8,20 @@ import { InputComponent } from 'src/app/components/input/input.component';
   styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
+
+  trip: Trip = {
+    name: 'Santos',
+    price: 3000,
+    location: 'Santos',
+    image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/76/57/a6/caption.jpg?w=500&h=400&s=1',
+    tripImages: ['string'],
+    capacity: 16,
+    driver: 'string',
+    goingDate: '12/05/2025',
+    returnDate: '15/05/2025',
+    vehicleName: 'Boxer',
+  }
+
   searchInput: InputComponent[] = [
     {
       type: 'text',
