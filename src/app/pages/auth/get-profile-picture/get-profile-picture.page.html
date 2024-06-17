@@ -2,7 +2,10 @@
   <div class="content">
     <ion-text class="title">Estamos terminando.</ion-text>
     <ion-text class="description">Tire ou Envie uma foto para completar seu cadastro</ion-text>
-    <div class="picture"></div>
-    <ion-button color="bv-dark" (click)="navigateByUrl('register-finished')">Próximo</ion-button>
+    <div class="picture">
+      <img #imageElement>
+    </div>
+    <ion-button color="bv-dark" (click)="takePicture()">Tirar foto</ion-button>
+    <ion-button color="bv-success" (click)="navigateByUrl('register-finished')" *ngIf="hasPhoto">Próximo</ion-button>
   </div>
 </ion-content>
