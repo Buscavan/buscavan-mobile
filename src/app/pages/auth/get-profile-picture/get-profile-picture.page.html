@@ -1,13 +1,8 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>get-profile-picture</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">get-profile-picture</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="content">
+    <ion-text class="title">Estamos terminando.</ion-text>
+    <ion-text class="description">Tire ou Envie uma foto para completar seu cadastro</ion-text>
+    <div class="picture"></div>
+    <ion-button color="bv-dark" (click)="navigateByUrl('register-finished')">Próximo</ion-button>
+  </div>
 </ion-content>

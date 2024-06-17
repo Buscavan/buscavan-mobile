@@ -1,0 +1,38 @@
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+
+  .title {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  ion-button {
+    text-transform: none;
+    width: 90%;
+    height: 50px;
+    font-size: 1rem;
+    --border-radius: 6px;
+  }
+
+  .picture {
+    margin-top: 32px;
+    margin-bottom: 192px;
+    border: 2px solid var(--ion-color-bv-dark);
+    width: 200px;
+    aspect-ratio: 1/1.5;
+    border-radius: 100%;
+  }
+}

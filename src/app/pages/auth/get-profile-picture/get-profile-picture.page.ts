@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-profile-picture',
   templateUrl: './get-profile-picture.page.html',
   styleUrls: ['./get-profile-picture.page.scss'],
 })
-export class GetProfilePicturePage implements OnInit {
+export class GetProfilePicturePage {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit() {
+  public navigateByUrl(url: string) {
+    this.router.navigate([url]);
   }
-
 }
