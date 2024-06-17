@@ -37,6 +37,14 @@ const routes: Routes = [
     path: 'trip-info',
     loadChildren: () => import('./pages/trip-info/trip-info.module').then( m => m.TripInfoPageModule)
   },
+  {
+    path: 'get-profile-picture',
+    loadChildren: () => import('./pages/auth/get-profile-picture/get-profile-picture.module').then( m => m.GetProfilePicturePageModule)
+  },
+  {
+    path: 'register-finished',
+    loadChildren: () => import('./pages/auth/register-finished/register-finished.module').then( m => m.RegisterFinishedPageModule)
+  },
 
 ];
 @NgModule({
