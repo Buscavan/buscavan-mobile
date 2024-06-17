@@ -9,6 +9,7 @@ interface Trip {
   goingDate: string,
   returnDate: string,
   vehicleName: string,
+  description: string,
 };
 
 export { Trip };

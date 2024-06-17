@@ -1,25 +1,45 @@
-$item-height: 90px;
+ion-card {
+  padding: 15px;
 
-ion-item {
-  border: 1px solid var(--ion-color-bv-dark);
-  height: $item-height;
-
-  div {
-    height: $item-height;
+  img {
+    border-radius: 8px;
+    aspect-ratio: 2 / 1;
     width: 100%;
-    display: flex;
+  }
 
-    .imageContainer {
-      height: calc($item-height - ($item-height * .1));
-      width: calc($item-height - ($item-height * .1));
-      img {
-        height: 100%;
-        aspect-ratio: 1;
+  .header {
+    display: flex;
+    flex-direction: row;
+    font-weight: 800;
+    justify-content: space-between;
+    font-size: 16px;
+
+    .name {
+    }
+
+    .price {
+
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+    font-size: 16px;
+    padding-top: 0;
+
+    ion-text {
+      display: flex;
+      align-items: center;
+
+      ion-icon {
+        margin-right: 4px;
       }
     }
 
-    .infoContainer {
-      display: block;
+    ion-text + ion-text {
+      margin-left: 18px;
     }
   }
 }

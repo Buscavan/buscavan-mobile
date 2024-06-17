@@ -20,6 +20,7 @@ export class TripInfoPage {
     goingDate: '12/05/2025',
     returnDate: '15/05/2025',
     vehicleName: 'Boxer',
+    description: 'Uma viagem para Santos',
   }
 
   constructor() { }

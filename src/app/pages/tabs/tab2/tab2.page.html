@@ -2,7 +2,5 @@
 
 <ion-content [fullscreen]="true" class="ion-padding">
   <app-forms title="Próxima parada?" [inputs]="searchInput" [filterInputs]="searchFilterInputs" buttonText="Confirmar Busca" />
-  <ion-list>
-    <app-trip-item [trip]="trip"></app-trip-item>
-  </ion-list>
+  <app-trip-item *ngFor="let trip of trips" [trip]="trip"></app-trip-item>
 </ion-content>
