@@ -45,6 +45,10 @@ const routes: Routes = [
     path: 'register-finished',
     loadChildren: () => import('./pages/auth/register-finished/register-finished.module').then( m => m.RegisterFinishedPageModule)
   },
+  {
+    path: 'get-cnh-picture',
+    loadChildren: () => import('./pages/auth/get-cnh-picture/get-cnh-picture.module').then( m => m.GetCnhPicturePageModule)
+  },
 
 ];
 @NgModule({

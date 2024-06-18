@@ -6,6 +6,6 @@
       <img #imageElement>
     </div>
     <ion-button color="bv-dark" (click)="takePicture()">Tirar foto</ion-button>
-    <ion-button color="bv-success" (click)="navigateByUrl('register-finished')" *ngIf="hasPhoto">Próximo</ion-button>
+    <ion-button color="bv-success" (click)="navigateByUrl('register-finished')" *ngIf="hasPhoto" fill="outline">Próximo</ion-button>
   </div>
 </ion-content>
