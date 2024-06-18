@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { GetProfilePicturePageRoutingModule } from './get-profile-picture-routing.module';
 
 import { GetProfilePicturePage } from './get-profile-picture.page';
+import { HeaderComponent } from 'src/app/components/header/header.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    GetProfilePicturePageRoutingModule
+    GetProfilePicturePageRoutingModule,
+    HeaderComponent
   ],
   declarations: [GetProfilePicturePage]
 })

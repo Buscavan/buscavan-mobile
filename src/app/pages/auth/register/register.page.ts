@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { RequestsService } from '../../../services/requests/requests.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
-import { ToastController } from '@ionic/angular';
+import { ActionSheetController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -11,6 +11,9 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
+  actionSheetHeader = '';
+  actionSheetButtons = [];
+
   registerForm: any;
   cpfrgx =
     '([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})';
@@ -21,7 +24,8 @@ export class RegisterPage implements OnInit {
     private requestsService: RequestsService,
     private authService: AuthService,
     private zone: NgZone,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private actionSheetCtrl: ActionSheetController
   ) {}
 
   public navigateByUrl(url: string) {
@@ -30,20 +34,27 @@ export class RegisterPage implements OnInit {
 
   public async register() {
     const valid = this.registerForm.valid;
-    if (!valid) return this.presentErrorToast('campos não preenchidos corretamente');
+    if (!valid)
+      return this.presentErrorToast('campos não preenchidos corretamente');
     const value = this.registerForm.value;
+    this.presentActionSheet(value);
+
     const request = await this.requestsService.post('auth/register', value);
     request.subscribe(
       async (response: any) => {
-        if (response.status === 201 && response.body) {
-          await this.authService
-            .setUser(response.body)
-            .then(() => this.zone.run(() => this.navigateByUrl('tabs')));
-          this.presentRegisterToast();
-        }
+        if (response.status === 201 && response.body)
+          await this.authService.setUser(response.body).then(() => {});
       },
       (err: Error) => this.presentErrorToast(err.message)
     );
+  }
+
+  async registerDriver(value: any) {
+    this.zone.run(() => this.navigateByUrl('get-cnh-picture'));
+  }
+
+  async registerNormal(value: any) {
+    this.zone.run(() => this.navigateByUrl('get-profile-picture'));
   }
 
   ngOnInit(): void {
@@ -92,5 +103,26 @@ export class RegisterPage implements OnInit {
     });
 
     await toast.present();
+  }
+
+  async presentActionSheet(value: any) {
+    const actionSheet = await this.actionSheetCtrl.create({
+      id: 'register',
+      header: 'Você é?',
+      subHeader: 'Escolha como prosseguir com o cadastro',
+      cssClass: 'registerActionSheet',
+      buttons: [
+        {
+          text: 'Passageiro',
+          handler: () => this.registerNormal(value),
+        },
+        {
+          text: 'Motorista',
+          handler: () => this.registerDriver(value),
+        },
+      ],
+    });
+
+    await actionSheet.present();
   }
 }
