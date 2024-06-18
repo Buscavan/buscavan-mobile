@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { InputComponent } from 'src/app/components/input/input.component';
 import { Trip } from 'src/app/interfaces/trip';
 
@@ -8,13 +9,13 @@ import { Trip } from 'src/app/interfaces/trip';
   styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
-
   trips: Trip[] = [
     {
       name: 'Santos',
       price: 3000,
       location: 'Santos',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/7/73/At_Santos%2C_Brazil_2018_480_%28cropped%29.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/7/73/At_Santos%2C_Brazil_2018_480_%28cropped%29.jpg',
       tripImages: ['string'],
       capacity: 16,
       driver: 'string',
@@ -27,7 +28,8 @@ export class Tab2Page {
       name: 'Rio de Janeiro',
       price: 1500,
       location: 'Rio de Janeiro',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cidade_de_luz_e_cor.jpg/900px-Cidade_de_luz_e_cor.jpg',
+      image:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Cidade_de_luz_e_cor.jpg/900px-Cidade_de_luz_e_cor.jpg',
       tripImages: ['string'],
       capacity: 12,
       driver: 'string',
@@ -40,7 +42,8 @@ export class Tab2Page {
       name: 'Lençóis Paulista',
       price: 499.99,
       location: 'Lençóis Paulista',
-      image: 'https://fmintegracao.com.br/wp-content/uploads/elementor/thumbs/IMG-20220428-WA0003-po50vtq4hxgik8b6ai0eqt7p938jcz83gffoycak5k.jpg',
+      image:
+        'https://fmintegracao.com.br/wp-content/uploads/elementor/thumbs/IMG-20220428-WA0003-po50vtq4hxgik8b6ai0eqt7p938jcz83gffoycak5k.jpg',
       tripImages: ['string'],
       capacity: 8,
       driver: 'string',
@@ -53,7 +56,8 @@ export class Tab2Page {
       name: 'Disney',
       price: 7000,
       location: 'Disney',
-      image: 'https://www.melhoresdestinos.com.br/wp-content/uploads/2021/10/orlando-eua-disney-capa9.jpg',
+      image:
+        'https://www.melhoresdestinos.com.br/wp-content/uploads/2021/10/orlando-eua-disney-capa9.jpg',
       tripImages: ['string'],
       capacity: 80,
       driver: 'string',
@@ -62,7 +66,7 @@ export class Tab2Page {
       vehicleName: 'Boxer',
       description: 'Tá na Disney?',
     },
-  ]
+  ];
 
   searchInput: InputComponent[] = [
     {
@@ -110,5 +114,9 @@ export class Tab2Page {
     },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
+
+  public navigateByUrl(url: string, trip: Trip) {
+    this.router.navigate([url], { state: { trip } });
+  }
 }
