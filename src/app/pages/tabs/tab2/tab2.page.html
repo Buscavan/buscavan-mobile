@@ -1,6 +1,19 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true" class="ion-padding">
-  <app-forms title="Próxima parada?" [inputs]="searchInput" [filterInputs]="searchFilterInputs" buttonText="Confirmar Busca" />
-  <app-trip-item *ngFor="let trip of trips" [trip]="trip" (click)="navigateByUrl('trip-info', trip)"></app-trip-item>
+  <app-forms
+    title="Próxima parada?"
+    [inputs]="searchInput"
+    [filterInputs]="searchFilterInputs"
+    buttonText="Confirmar Busca"
+    ($submit)="handleSearch($event)"
+  />
+
+  <ng-container *ngIf="isSearching">
+    <app-trip-item
+      *ngFor="let trip of trips"
+      [trip]="trip"
+      (click)="navigateByUrl('trip-info', trip)"
+    ></app-trip-item>
+  </ng-container>
 </ion-content>

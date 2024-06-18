@@ -1,49 +1,8 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card class="vehiclesCard" color="bv-light">
-    <ion-card-header>
-      <ion-card-title>Vans Disponíveis</ion-card-title>
-      <ion-card-subtitle>Veja aqui todas as vans disponíveis, de acordo com o origem/destino</ion-card-subtitle>
-    </ion-card-header>
+  <app-trip-item *ngFor="let trip of trips" [trip]="trip" (click)="navigateByUrl('trip-info', trip)"></app-trip-item>
 
-    <ion-card-content>
-      <ion-grid>
-        <ion-row>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-          <ion-col>
-            <ion-img src="https://images.vexels.com/media/users/3/128645/isolated/preview/d96ab2658b0f1366bfc2d7074b49730b-van-retro-lustrosa.png"></ion-img>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </ion-card-content>
-  </ion-card>
 
   <div class="advertisement">
     <p>Anuncie em nossa plataforma e entre pro time BuscaVans!</p>

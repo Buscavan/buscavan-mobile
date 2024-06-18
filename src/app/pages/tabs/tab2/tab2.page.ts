@@ -9,6 +9,9 @@ import { Trip } from 'src/app/interfaces/trip';
   styleUrls: ['tab2.page.scss'],
 })
 export class Tab2Page {
+
+  isSearching: boolean = false;
+
   trips: Trip[] = [
     {
       name: 'Santos',
@@ -118,5 +121,10 @@ export class Tab2Page {
 
   public navigateByUrl(url: string, trip: Trip) {
     this.router.navigate([url], { state: { trip } });
+  }
+
+  handleSearch(event: any) {
+    this.isSearching = true;
+    const value = event.value;
   }
 }

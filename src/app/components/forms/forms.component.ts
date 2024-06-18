@@ -2,7 +2,7 @@ import { InputComponent } from '../input/input.component';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Output, Component, EventEmitter, Input } from '@angular/core';
+import { Output, Component, EventEmitter, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-forms',
@@ -51,6 +51,9 @@ export class FormsComponent {
   }
 
   handleClick() {
-    this.$submit.emit();
+    const value = [];
+    value.push(this.inputs.map(input => input.value))
+    value.push(this.filterInputs.map(input => input.value))
+    this.$submit.emit(value);
   }
 }
