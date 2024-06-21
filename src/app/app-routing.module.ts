@@ -49,6 +49,14 @@ const routes: Routes = [
     path: 'get-cnh-picture',
     loadChildren: () => import('./pages/auth/get-cnh-picture/get-cnh-picture.module').then( m => m.GetCnhPicturePageModule)
   },
+  {
+    path: 'register-trip',
+    loadChildren: () => import('./pages/register-trip/register-trip.module').then( m => m.RegisterTripPageModule)
+  },
+  {
+    path: 'register-vehicle',
+    loadChildren: () => import('./pages/register-vehicle/register-vehicle.module').then( m => m.RegisterVehiclePageModule)
+  },
 
 ];
 @NgModule({

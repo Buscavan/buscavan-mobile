@@ -1,5 +1,14 @@
 <app-header></app-header>
 
-<ion-content [fullscreen]="true" class="ion-padding">
-  <app-forms title="Cadastrar novo veículo" [inputs]="searchInputs" buttonText="Cadastrar" [formGroup]="automobileForm" ($submit)="registerAutomobile()" />
+<ion-content [fullscreen]="true">
+  <ion-card color="bv-light">
+    <ion-card-header>
+      <ion-card-title color="bv-text-primary"
+        >Qual desses você deseja cadastrar?</ion-card-title
+      >
+    </ion-card-header>
+    <ion-button color="bv-dark" (click)="navigateByUrl('register-vehicle')">Veículo</ion-button>
+    <ion-text><span></span>ou<span></span></ion-text>
+    <ion-button color="bv-dark" fill="outline" (click)="navigateByUrl('register-trip')">Viagem</ion-button>
+  </ion-card>
 </ion-content>

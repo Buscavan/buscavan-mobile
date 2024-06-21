@@ -1,0 +1,33 @@
+ion-button {
+  text-transform: none;
+  height: 40px;
+  width: 280px;
+  font-size: 1.1rem;
+  --border-radius: 6px;
+}
+
+ion-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: var(--ion-color-bv-dark-secondary);
+
+  span {
+    width: 45%;
+    height: 1px;
+    background-color: var(--ion-color-bv-dark-secondary);
+  }
+}
+
+ion-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 15%;
+  height: 100%;
+  margin: 0;
+}
