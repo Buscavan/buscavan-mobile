@@ -4,6 +4,7 @@ import { RequestsService } from '../../../services/requests/requests.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ActionSheetController, ToastController } from '@ionic/angular';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-register',
@@ -21,9 +22,7 @@ export class RegisterPage implements OnInit {
 
   constructor(
     private router: Router,
-    private requestsService: RequestsService,
     private authService: AuthService,
-    private zone: NgZone,
     private toastController: ToastController,
     private actionSheetCtrl: ActionSheetController
   ) {}
@@ -37,24 +36,8 @@ export class RegisterPage implements OnInit {
     if (!valid)
       return this.presentErrorToast('campos não preenchidos corretamente');
     const value = this.registerForm.value;
+    console.log('Value: ', value);
     this.presentActionSheet(value);
-
-    const request = await this.requestsService.post('auth/register', value);
-    request.subscribe(
-      async (response: any) => {
-        if (response.status === 201 && response.body)
-          await this.authService.setUser(response.body).then(() => {});
-      },
-      (err: Error) => this.presentErrorToast(err.message)
-    );
-  }
-
-  async registerDriver(value: any) {
-    this.zone.run(() => this.navigateByUrl('get-cnh-picture'));
-  }
-
-  async registerNormal(value: any) {
-    this.zone.run(() => this.navigateByUrl('get-profile-picture'));
   }
 
   ngOnInit(): void {
@@ -83,17 +66,6 @@ export class RegisterPage implements OnInit {
     return result;
   }
 
-  async presentRegisterToast() {
-    const toast = await this.toastController.create({
-      message: 'Seja bem vindo!',
-      duration: 1500,
-      position: 'bottom',
-      cssClass: 'toast success',
-    });
-
-    await toast.present();
-  }
-
   async presentErrorToast(error: string) {
     const toast = await this.toastController.create({
       message: `Erro: ${error}`,
@@ -105,7 +77,7 @@ export class RegisterPage implements OnInit {
     await toast.present();
   }
 
-  async presentActionSheet(value: any) {
+  async presentActionSheet(value: User) {
     const actionSheet = await this.actionSheetCtrl.create({
       id: 'register',
       header: 'Você é?',
@@ -114,11 +86,23 @@ export class RegisterPage implements OnInit {
       buttons: [
         {
           text: 'Passageiro',
-          handler: () => this.registerNormal(value),
+          handler: () => {
+            this.authService.setUserRegisteringData({
+              ...value,
+              role: 'PASSANGER',
+            });
+            this.navigateByUrl('register-finished');
+          },
         },
         {
           text: 'Motorista',
-          handler: () => this.registerDriver(value),
+          handler: () => {
+            this.authService.setUserRegisteringData({
+              ...value,
+              role: 'DRIVER',
+            });
+            this.navigateByUrl('get-cnh-picture');
+          },
         },
       ],
     });

@@ -32,7 +32,7 @@ export class MenuComponent {
 
   private async reload() {
     this.user = await this.authService.getUser();
-    this.name = this.user.name;
+    this.name = this.user.name || '';
     this.getFirstName();
   }
 

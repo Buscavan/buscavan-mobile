@@ -11,10 +11,12 @@ interface LoginUserDTO {
 }
 
 interface User {
-  id: number;
-  email: string,
-  name: string,
-  cpf: string,
+  id?: number;
+  email?: string,
+  name?: string,
+  cpf?: string,
+  password?: string,
+  role?: 'PASSANGER' | 'DRIVER',
 }
 
 export { CreateUserDTO, LoginUserDTO, User };

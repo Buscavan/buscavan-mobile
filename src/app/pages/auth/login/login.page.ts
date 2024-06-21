@@ -35,12 +35,19 @@ export class LoginPage implements OnInit {
     const request = await this.requestsService.post('auth/login', value);
     request.subscribe(
       async (response: any) => {
-        if (response.status === 200 && response.body) {
-          await this.authService.setUser(response.body.user).then(() => {
-            this.zone.run(() => this.navigateByUrl('tabs'));
-            this.presentLoginToast();
+        console.log('Login response: ', response);
+        if (response.status === 200 && response.body)
+          await this.authService.setUser({
+            email: response.body.user.email,
+            cpf: response.body.user.email,
+            name: response.body.user.name,
+            role: response.body.user.role,
           });
-        }
+
+        await this.authService.setToken(response.body.token).then(() => {
+          this.zone.run(() => this.navigateByUrl('tabs'));
+          this.presentLoginToast();
+        });
       },
       async (err: Error) => this.presentErrorToast(err.message)
     );
