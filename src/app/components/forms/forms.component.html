@@ -69,6 +69,10 @@
     </div>
   </div>
 
+  <div>
+    <ng-content select="[preend]"></ng-content>
+  </div>
+
   <ion-button size="block" (click)="handleClick()" color="bv-dark">
     {{ buttonText }}
   </ion-button>

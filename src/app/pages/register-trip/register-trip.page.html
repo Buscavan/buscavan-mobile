@@ -1,4 +1,16 @@
 <app-header [backButton]="true"></app-header>
 
 <ion-content [fullscreen]="true">
+  <app-forms
+    buttonText="Salvar"
+    [formGroup]="registerTripForm"
+    [inputs]="inputs"
+    title="Cadastre a sua viagem!"
+    ($submit)="presentActionSheet()"
+  >
+    <div preend>
+      <ion-button color="bv-dark" (click)="selectVehicle()">Selecionar veículo</ion-button>
+      <app-input placeholder="Veículo" type="text" name="veiculoId" [formGroup]="registerTripForm" [disabled]="true" [value]="selectedVehicle.placa"></app-input>
+    </div>
+  </app-forms>
 </ion-content>
