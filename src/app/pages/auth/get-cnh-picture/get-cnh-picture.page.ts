@@ -9,19 +9,15 @@ import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 })
 export class GetCnhPicturePage implements AfterViewInit {
   @ViewChildren('imageElementFront') imageElementsFront!: QueryList<any>;
-  @ViewChildren('imageElementBack') imageElementsBack!: QueryList<any>;
 
   private imageElementFront: any;
-  private imageElementBack: any;
 
   hasFrontPhoto: boolean = false;
-  hasBackPhoto: boolean = false;
 
   constructor(private router: Router) {}
 
   ngAfterViewInit() {
     this.imageElementFront = this.imageElementsFront.first.nativeElement;
-    this.imageElementBack = this.imageElementsBack.first.nativeElement;
   }
 
   public navigateByUrl(url: string) {
@@ -50,36 +46,6 @@ export class GetCnhPicturePage implements AfterViewInit {
       }
 
       this.hasFrontPhoto = true;
-    } catch (error) {
-      console.error('Unable to take photo!', error);
-      if (error instanceof DOMException) {
-        console.error('DOMException details:', error);
-      }
-    }
-  }
-
-  public async takePictureBack() {
-    try {
-      console.log('Requesting camera access...');
-      const image = await Camera.getPhoto({
-        quality: 90,
-        allowEditing: false,
-        resultType: CameraResultType.Uri,
-        source: CameraSource.Camera,
-      });
-      console.log('Photo captured:', image);
-
-      const imageUrl = image.webPath;
-
-      console.log('Image URL:', imageUrl);
-
-      if (this.imageElementBack) {
-        this.imageElementBack.src = imageUrl;
-      } else {
-        console.error('Image element is not available.');
-      }
-
-      this.hasBackPhoto = true;
     } catch (error) {
       console.error('Unable to take photo!', error);
       if (error instanceof DOMException) {

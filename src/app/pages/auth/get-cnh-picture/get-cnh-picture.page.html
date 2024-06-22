@@ -7,15 +7,11 @@
     <div class="picture">
       <img #imageElementFront>
     </div>
-    <div class="picture">
-      <img #imageElementBack>
-    </div>
 
     <div class="buttons">
-      <ion-button color="bv-dark" (click)="takePictureFront()">Enviar frente</ion-button>
-      <ion-button color="bv-dark" (click)="takePictureBack()">Enviar verso</ion-button>
+      <ion-button color="bv-dark" (click)="takePictureFront()">Enviar CNH</ion-button>
     </div>
 
-    <ion-button color="bv-success" (click)="navigateByUrl('get-profile-picture')" *ngIf="hasFrontPhoto && hasBackPhoto" fill="outline">Próximo</ion-button>
+    <ion-button color="bv-success" (click)="navigateByUrl('get-profile-picture')" *ngIf="hasFrontPhoto" fill="outline">Próximo</ion-button>
   </div>
 </ion-content>

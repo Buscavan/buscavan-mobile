@@ -28,8 +28,8 @@
   }
 
   .picture {
-    margin-top: 82px;
-    margin-bottom: 16px;
+    margin-top: 32px;
+    margin-bottom: 200px;
     border: 2px solid var(--ion-color-bv-dark);
     width: 300px;
     height: 200px;
@@ -47,11 +47,6 @@
     }
   }
 
-  .picture + .picture {
-    margin-top: 0;
-    margin-bottom: 92px;
-  }
-
   .buttons {
     display: flex;
     justify-content: space-around;
@@ -59,7 +54,7 @@
     margin-bottom: 16px;
 
     ion-button {
-      width: 45%;
+      width: 90%;
     }
   }
 }
