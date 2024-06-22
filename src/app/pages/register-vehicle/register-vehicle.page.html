@@ -1,4 +1,5 @@
 <app-header [backButton]="true"></app-header>
 
 <ion-content [fullscreen]="true">
+  <app-forms buttonText="Salvar" [formGroup]="registerVehicleForm" [inputs]="inputs" title="Cadastre o seu veiculo!" ($submit)="presentActionSheet()"></app-forms>
 </ion-content>

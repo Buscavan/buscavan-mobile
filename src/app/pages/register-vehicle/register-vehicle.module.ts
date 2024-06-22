@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -8,6 +8,7 @@ import { RegisterVehiclePageRoutingModule } from './register-vehicle-routing.mod
 
 import { RegisterVehiclePage } from './register-vehicle.page';
 import { HeaderComponent } from 'src/app/components/header/header.component';
+import { FormsComponent } from 'src/app/components/forms/forms.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { HeaderComponent } from 'src/app/components/header/header.component';
     FormsModule,
     IonicModule,
     RegisterVehiclePageRoutingModule,
-    HeaderComponent
+    HeaderComponent,
+    ReactiveFormsModule,
+    FormsComponent
   ],
   declarations: [RegisterVehiclePage]
 })
