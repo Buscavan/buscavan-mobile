@@ -113,15 +113,20 @@ export class RegisterTripPage implements OnInit {
     }
 
     const dataForm: {
-      placa: string;
-      capacidade: number;
-      modelo: string;
+      origemId: number;
+      destinoId: number;
       file: Blob;
       localEmbarqueIda: string;
       localEmbarqueVolta: string;
+      veiculoId: number;
+      descricao: string;
     } = this.registerTripForm.value;
     dataForm.localEmbarqueIda = 'a';
     dataForm.localEmbarqueVolta = 'a';
+    dataForm.veiculoId = this.selectedVehicle.id;
+    dataForm.origemId = 1;
+    dataForm.destinoId = 1;
+    dataForm.descricao = '';
     dataForm.file = (await this.takePicture()) || new Blob();
 
     const response = await this.requestsService.post(
@@ -228,7 +233,7 @@ export class RegisterTripPage implements OnInit {
     const buttons = this.driversVehicles.map((el: any) => {
       return {
         text: el.placa,
-        handler: () => this.changeSelectedVehicle({ placa: el.placa, id: 0 }),
+        handler: () => this.changeSelectedVehicle({ placa: el.placa, id: el.id }),
       };
     });
     const actionSheet = await this.actionSheetCtrl.create({
